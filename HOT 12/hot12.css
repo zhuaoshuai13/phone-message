@@ -1,0 +1,2435 @@
+@import "base/variables";
+@import "base/mixins";
+@import "base/fonts";
+
+//生产
+$imgPath: "/fileadmin/assets/v/hot/hot12/images/";
+$fontPath : '/fileadmin/assets/fonts/DINPro';
+
+
+// 本地
+// $imgPath: "/assets/images/hot12/";
+// $fontPath: "/assets/fonts/DINPro";
+
+@font-face {
+  font-family: 'DINProBlack';
+  src: url($fontPath + '/DINPro-Black.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DINProBold';
+  src: url($fontPath + '/DINPro-Bold.otf') format('truetype');
+}
+
+
+@font-face {
+  font-family: 'DINProMedium';
+  src: url($fontPath + '/DINPro-Medium.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DINProLight';
+  src: url($fontPath + '/DINPro-Light.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DINProRegular';
+  src: url($fontPath + '/DINPro-Regular.otf') format('truetype');
+}
+
+
+$green: #00ee54;
+$bgcolor: #000;
+// $gray: #b3b3b3;
+$gray: #f0f4f8;
+
+@mixin libBgImage($url, $bz:false, $bz100:false) {
+  background-image: url(#{$imgPath}#{$url});
+
+  @if $bz {
+    @if $bz100 {
+      background-size: 100% 100%;
+    }
+
+    @else {
+      background-size: cover;
+    }
+  }
+}
+
+@function calcPaddingBottomToPercent($w, $h) {
+  @return percentage($h / $w);
+}
+
+@function pxToPercent($m, $n) {
+  @return $n / $m;
+}
+
+@function calcRatioToScreen($h, $w, $unit: false) {
+  @if $unit {
+    @return $h / $w * 100vh;
+  }
+
+  @return $h / $w * 100vw;
+}
+
+.mob{
+  display: none;
+}
+.sec{
+  width: 19.2rem;
+  margin: 0 auto
+}
+.content{
+  width: 11.94rem;
+  margin: 0 auto;
+}
+
+.sec1{
+  height: 10.8rem;
+  .video-container{
+    height:10.8rem;
+  }
+
+  video{
+    height:10.8rem;
+  }
+  .video-bg-img{
+    @include libBgImage('pc/sec1/bg.png', true);
+    height: 10.8rem;
+  }
+}
+
+.sec2{
+  padding-top: 2.44rem;
+  height: 16.2rem;
+  @include libBgImage('pc/sec2/bg.png', true,true);
+  position: relative;
+  @keyframes f1{
+    20%{
+      opacity: 0;
+    }
+    90%{
+      opacity: 1;
+    }
+    100%{
+      opacity: 0;
+    }
+  }
+  @keyframes f2{
+    40%{
+      opacity: 0;
+    }
+    90%{
+      opacity: 1;
+    }
+    100%{
+      opacity: 0;
+    }
+  }
+  @keyframes f3{
+    60%{
+      opacity: 0;
+    }
+    90%{
+      opacity: 1;
+    }
+    100%{
+      opacity: 0;
+    }
+  }
+  @keyframes f4{
+    80%{
+      opacity: 0;
+    }
+    90%{
+      opacity: 1;
+    }
+    100%{
+      opacity: 0;
+    }
+  }
+  .product{
+    width: 11.94rem;
+    height: 3.28rem;
+    margin: 0 auto;
+    @include libBgImage('pc/sec2/product.png', true,true);
+  }
+  .list{
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    width: 12.25rem;
+    left: 0;
+    right: 0;
+    margin: 1.35rem auto 0;
+  }
+  .left{
+    .des{
+      font-family: "DINProRegular";
+      font-size: .16rem;
+    }
+    .f1{
+      width: 2.78rem;
+      height: 2.93rem;
+      position: relative;
+      @include libBgImage('pc/sec2/f1.png', true,true);
+      padding-top: 2.26rem;
+      .des{
+        width: 1.65rem;
+        margin-left: .67rem;
+      }
+
+      .wave1{
+        width: 2.78rem;
+        height: 2.93rem;
+        position:absolute;
+        @include libBgImage('pc/sec2/f101.png', true,true);
+        top: 0;
+        opacity: 0;
+        animation: f1 2s  infinite;
+      }
+      .wave2{
+        width: 2.78rem;
+        height: 2.93rem;
+        position:absolute;
+        @include libBgImage('pc/sec2/f102.png', true,true);
+        top: 0;
+        opacity: 0;
+        animation: f2 2s   infinite;
+      }
+      .wave3{
+        width: 2.78rem;
+        height: 2.93rem;
+        position:absolute;
+        @include libBgImage('pc/sec2/f103.png', true,true);
+        top: 0;
+        opacity: 0;
+        animation: f3 2s infinite;
+      }
+      .wave4{
+        width: 2.78rem;
+        height: 2.93rem;
+        position:absolute;
+        @include libBgImage('pc/sec2/f104.png', true,true);
+        top: 0;
+        opacity: 0;
+        animation: f4 2s  infinite;
+      }
+    }
+    .f2{
+      width: 2.78rem;
+      height: 1.78rem;
+      margin-top: .18rem;
+      @include libBgImage('pc/sec2/f2.png', true,true);
+      padding-top: .44rem;
+      .des{
+        width: 1.65rem;
+        margin-left: .67rem;
+        span{
+          font-family: "DINProBold";
+          font-size: .32rem;
+          font-weight: 800;
+        }
+      }
+
+    }
+    .f3{
+      width: 2.78rem;
+      height: 3rem;
+      margin-top: .18rem;
+      @include libBgImage('pc/sec2/f3.png', true,true);
+      padding-top: .47rem;
+      position: relative;
+      .des{
+        width: 1.65rem;
+        margin-left: .67rem;
+        span{
+          font-family: "DINProBold";
+          font-size: .32rem;
+          font-weight: 800;
+          line-height: .3rem;
+        }
+      }
+      .wave1{
+        width: 2.78rem;
+        height: 2.93rem;
+        position:absolute;
+        @include libBgImage('pc/sec2/f301.png', true,true);
+        bottom: 0;
+        opacity: 0;
+        animation: f1 2s  infinite;
+      }
+      .wave2{
+        width: 2.78rem;
+        height: 2.93rem;
+        position:absolute;
+        @include libBgImage('pc/sec2/f302.png', true,true);
+        bottom: 0;
+        opacity: 0;
+        animation: f2 2s   infinite;
+      }
+      .wave3{
+        width: 2.78rem;
+        height: 2.93rem;
+        position:absolute;
+        @include libBgImage('pc/sec2/f303.png', true,true);
+        bottom: 0;
+        opacity: 0;
+        animation: f3 2s   infinite;
+      }
+      .wave4{
+        width: 2.78rem;
+        height: 2.93rem;
+        position:absolute;
+        @include libBgImage('pc/sec2/f304.png', true,true);
+        bottom: 0;
+        opacity: 0;
+        animation: f4 2s  infinite;
+      }
+
+    }
+  }
+  .mid{
+    margin-left: .2rem;
+    .f4{
+      width: 6.02rem;
+      height: 4.32rem;
+      margin-top: .65rem;
+      @include libBgImage('pc/sec2/f4.png', true,true);
+      padding-top: 3.6rem;
+      .des{
+        margin-left: .3rem;
+        color:#fff;
+        span{
+          font-family: "DINProBold";
+          font-size: .4rem;
+          font-weight: 800;
+          line-height: .3rem;
+        }
+      }
+
+    }
+    .f5{
+      width: 6rem;
+      height: 1.82rem;
+      margin-top: .15rem;
+      @include libBgImage('pc/sec2/f5.png', true,true);
+      padding-top: .7rem;
+      .des{
+        margin-left: .3rem;
+        color:#fff;
+        span{
+          font-family: "DINProBold";
+          font-size: .4rem;
+          font-weight: 800;
+          line-height: .3rem;
+        }
+      }
+
+    }
+  }
+  .right{
+    .f6{
+      width: 3.25rem;
+      height: 5.82rem;
+      margin-top: 1.25rem;
+      @include libBgImage('pc/sec2/f6.png', true,true);
+      padding-top: .4rem;
+      .des{
+        margin-left: .38rem;
+        color:#000;
+        span{
+          font-family: "DINProBold";
+          font-size: .32rem;
+          font-weight: 800;
+          line-height: .3rem;
+        }
+      }
+    }
+  }
+}
+.sec3{
+  height:9.5rem;
+  position: relative;
+  .video-container{
+    @include libBgImage('pc/sec3/bg.png', true,true);
+  }
+  .video{
+    width: 11.96rem;
+    height: 6.73rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: .16rem;
+  }
+}
+@keyframes toRight{
+  0% {
+      transform: translate3d(-50%,0,0);
+  }
+  100%{
+      transform: translate3d(0%,0,0);
+  }
+}
+@keyframes toLeft{
+  0% {
+      transform: translate3d(0,0,0);
+  }
+  100%{
+      transform: translate3d(-50%,0,0);
+  }
+}
+.common{
+  position: relative;
+  z-index: 3;
+  // overflow: clip;
+  .top{
+    width:50rem;
+    display: flex;
+    justify-content: space-between;
+    animation: toRight 30s linear infinite normal;
+  }
+  .box_top{
+    transform: rotate(3deg);
+    width: 20.2rem;
+    height: .45rem;
+    position: absolute;
+    left: -.5rem;
+    z-index: 2;
+
+  }
+  .box_bottom{
+    transform: rotate(-3deg);
+    width: 20.2rem;
+    height: .45rem;
+    color: #fff;
+    margin-left:-.5rem;
+    background: #000;
+  }
+  .text{
+    width: 2.5rem;
+    height:.45rem;
+    line-height: .45rem;
+    font-size: .24rem;
+    font-family: "DINProRegular";
+    span{
+      font-family: "DINProBold";
+      font-weight: 800;
+    }
+  }
+  .bottom{
+    width:50rem;
+    display: flex;
+    justify-content: space-between;
+    animation: toLeft 30s linear infinite normal;
+  }
+}
+.common1{
+  .box_top{
+    color: #fff;
+    background: linear-gradient(to right, #2ED5C1, #398ECE);
+  }
+  .box_bottom{
+    color: #fff;
+    background-color: #000;
+  }
+}
+.sec4{
+  height: 13.22rem;
+  padding-top: 1rem;
+  @include libBgImage('pc/sec4/bgs.png');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 19.2rem 10.8rem;
+
+  .sec4-box{
+    .text{
+      @include libBgImage('pc/sec4/text.png');
+      width: 7.54rem;
+      height: 1.37rem;
+      margin: 0 auto 0;
+      background-size: contain;
+    }
+    width: 12rem;
+    text-align: center;
+    margin: 0 auto;
+    p{
+      font-size: .48rem;
+      font-family: "DINProBold";
+      text-align: center;
+      margin-top: -.55rem;
+    }
+    .description{
+      font-size: .24rem;
+      font-family: 'DINProRegular';
+      margin-top: .3rem;
+      text-align: center;
+    }
+    .product{
+      width: 11.94rem;
+      height: 5.34rem;
+      @include libBgImage('pc/sec4/product.png');
+      margin-top: .73rem;
+      background-size: contain;
+    }
+    .score{
+      height: 1.13rem;
+      display: flex;
+      justify-content:space-between;
+      font-size: .24rem;
+      font-family: 'DINProRegular';
+      margin-top: .68rem;
+      .left{
+        width: 4.54rem;
+        @include libBgImage('pc/sec4/left.png');
+        background-size:contain;
+        background-position: left top;
+        background-repeat: no-repeat;
+        padding-left: 2.2rem;
+        padding-top: .2rem;
+      }
+      .right{
+        width: 5.42rem;
+        height: .9rem;
+        @include libBgImage('pc/sec4/right.png');
+        background-size:contain;
+        background-position: left top;
+        background-repeat: no-repeat;
+        padding-left: 2.2rem;
+        padding-top: .2rem;
+      }
+      span{
+        text-align: left;
+      }
+    }
+    .tip{
+      font-size: .16rem;
+      color: #666666;
+      font-family: 'DINProRegular';
+      text-align: center;
+      margin-top: .7rem;
+    }
+  }
+}
+.sec5{
+  .content{
+    width: 12rem;
+  }
+  height: 10.8rem;
+  padding-top:2.3rem;
+  @include libBgImage('pc/sec5/bgs.png',true) ;
+  .img{
+    @include libBgImage('pc/sec5/product.png',true) ;
+    width: 3.45rem;
+    height:3.48rem;
+    float: left;
+    margin-top: 0.2rem;
+    margin-left: 1.2rem;
+  }
+  .text{
+    margin-left: 8rem;
+    p{
+      font-size: .72rem;
+      font-family: "DINProBold";
+      font-weight: 800;
+      line-height: .7rem;
+    }
+    .description{
+      width:3.36rem;
+      font-size: .2rem;
+      font-family: "DINProRegular";
+      margin-top: .75rem;
+    }
+  }
+  .parameter{
+    display: flex;
+    justify-content: space-around;
+    margin-top:.8rem;
+    div{
+      font-size: .24rem;
+      font-family: "DINProRegular";
+      color: #222;
+    }
+    .one{
+      div{
+        @include libBgImage('pc/sec5/one.png',true) ;
+        width: 3.2rem;
+        height: .88rem;
+      }
+    }
+    .two{
+      div{
+        @include libBgImage('pc/sec5/two.png',true) ;
+        width: 2.42rem;
+        height: .88rem;
+      }
+    }
+    .three{
+      div{
+        @include libBgImage('pc/sec5/three.png',true) ;
+        width: 3.85rem;
+        height: .88rem;
+      }
+    }
+  }
+  .tip{
+    font-size: .16rem;
+    width:12rem;
+    margin: 1rem auto 0;
+    text-align: center;
+    color: #666;
+  }
+}
+.sec6{
+  height:10.8rem;
+  padding-top:3.85rem;
+  @include libBgImage('pc/sec6/bg.png',true) ;
+  .text{
+    p{
+      font-size: .48rem;
+      font-family: "DINProBold";
+      font-weight: 800;
+    }
+    .description{
+      width:6.2rem;
+      font-size: .24rem;
+      font-family: "DINProRegular";
+      margin-top: .3rem;
+    }
+  }
+  .parameter{
+    display: flex;
+    margin-top:.5rem;
+    width: 5.8rem;
+    flex-wrap: wrap;
+    height: 0.92rem;
+    justify-content: space-between;
+    align-content: space-between;
+    div{
+      width:2.79rem;
+      height:.28rem;
+      line-height: .28rem;
+      font-size: .24rem;
+      font-family: "DINProRegular";
+      @include libBgImage('pc/sec6/f1.png',true);
+      background-repeat: no-repeat;
+      background-size: contain;
+      padding-left: .72rem;
+    }
+  }
+}
+.sec7{
+  @include libBgImage('pc/sec7/bgs.png',true);
+  height: 10.8rem;
+  position: relative;
+  .score{
+    @include libBgImage('pc/sec7/score.png',true);
+    width: 4.64rem;
+    height:2.56rem;
+    position: absolute;
+    top: 2.42rem;
+    left: 1.26rem;
+  }
+  .person{
+    @include libBgImage('pc/sec7/people.png',true);
+    width: 6.56rem;
+    height: 10.18rem;
+    position:absolute;
+    right: 0
+  }
+  .text{
+    position: absolute;
+    top: 4.5rem;
+    left: 2.4rem;
+    p{
+      font-size: 1.5rem;
+      font-family: "DINProBold";
+    }
+    P:nth-child(1){
+      color:#2ED5C1
+    }
+    P:nth-child(2){
+      color:#1B7D72;
+      font-family: "DINProRegular";
+      margin-top: -.9rem;
+    }
+    .description{
+      width: 7.4rem;
+      font-size: .24rem;
+      font-family: "DINProRegular";
+    }
+    .switch{
+      @include libBgImage('pc/sec7/opne.png',true);
+      width: 0.93rem;
+      height: 0.45rem;
+      float: right;
+      margin-top: -1rem;
+    }
+  }
+}
+.common2{
+  background-color: #000;
+  top: -.2rem;
+  .box_bottom{
+    transform: rotate(-2.7deg);
+  }
+  .box_top{
+    transform: rotate(2.7deg);
+  }
+  .box_top{
+    color: #fff;
+    background: linear-gradient(to right, #2ED5C1, #398ECE);
+  }
+  .box_bottom{
+    color: #fff;
+    background: linear-gradient(to right, #D7FE54, #0EDBC6);
+  }
+}
+.sec8{
+  @include libBgImage('pc/sec8/bg.png',true,true);
+  height: 11.94rem;
+  padding-top: 3.11rem;
+  margin-top: -.5rem;
+  p{
+    font-size: .48rem;
+    color: #fff;
+    font-family: "DINProBold";
+    text-align:center
+  }
+  p:nth-of-type(2){
+    margin-top: 2.44rem;
+    padding-bottom: .37rem;
+  }
+  .hand{
+    @include libBgImage('pc/sec8/hands.png',true,true);
+    width: 13.71rem;
+    height: 8.1rem;
+    margin: 0 auto;
+    position: relative;
+
+    .left{
+      @include libBgImage('pc/sec8/left.png',true,true);
+      position: absolute;
+      top: 0;
+      left:0;
+      width: 4.76rem;
+      height: 8.1rem;
+    }
+    .right{
+      @include libBgImage('pc/sec8/right.png',true,true);
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 4.7rem;
+      height: 8.1rem;
+    }
+  }
+  .phone{
+    @include libBgImage('pc/sec8/phone.png',true,true);
+    width: 9.58rem;
+    height: 4.38rem;
+    margin: 0 auto;
+  }
+  .mask{
+    @include libBgImage('pc/sec8/mask.png',true,true);
+    width: 9.5rem;
+    height: 4.03rem;
+    margin: 0 auto;
+    margin-top: -7.5rem;
+    padding-top:.6rem;
+    position: relative;
+    z-index: 2;
+    div{
+      font-size:.32rem;
+      font-family: "DINProRegular";
+      height: .68rem;
+      line-height:.68rem;
+      color: #fff;
+      margin-left: 1rem;
+    }
+    div:nth-of-type(even){
+      height:.77rem;
+      line-height: .77rem;
+    }
+  }
+  .tip{
+    font-size: .24rem;
+    font-family: "DINProRegular";
+    color: #fff;
+    width:12rem;
+    margin: .45rem auto 0;
+    text-align: center;
+  }
+}
+.sec10{
+  @include libBgImage('pc/sec10/bg.png',true,true);
+  height: 21.98rem;
+  padding-top: 1.89rem;
+  background-size: 19.2rem 20.98rem;
+  background-repeat: no-repeat;
+  background-position:bottom;
+  position: relative;
+  @keyframes f1{
+    25%{
+      opacity: 0;
+    }
+    90%{
+      opacity: 1;
+    }
+    100%{
+      opacity: 0;
+    }
+  }
+  @keyframes f2{
+    50%{
+      opacity: 0;
+    }
+    90%{
+      opacity: 1;
+    }
+    100%{
+      opacity: 0;
+    }
+  }
+  @keyframes f3{
+    75%{
+      opacity: 0;
+    }
+    90%{
+      opacity: 1;
+    }
+    100%{
+      opacity: 0;
+    }
+  }
+  .bigimgadd{
+    border-radius: .5rem;
+    transition: border-radius 1s;
+  }
+  .bigimg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include libBgImage('pc/sec9/BG.jpg',true,true);
+    height:10.8rem;
+    width: 19.2rem;
+    z-index: 2;
+  }
+  .sphone{
+    @include libBgImage('pc/sec9/phone.png',true,true);
+    width:14.09rem;
+    height: 5.02rem;
+    position: absolute;
+    z-index: 3;
+    top: 2.5rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  .wave1{
+    @include libBgImage('pc/sec9/wave01.png',true,true);
+    width:14.09rem;
+    height: 5.02rem;
+    position: absolute;
+    z-index: 2;
+    top: 2.5rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    opacity: 0;
+  }
+  .wave2{
+    @include libBgImage('pc/sec9/wave02.png',true,true);
+    width:14.09rem;
+    height: 5.02rem;
+    position: absolute;
+    z-index: 2;
+    top: 2.5rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    opacity: 0;
+  }
+  .wave3{
+    @include libBgImage('pc/sec9/wave03.png',true,true);
+    width:14.09rem;
+    height: 5.02rem;
+    position: absolute;
+    z-index: 2;
+    top: 2.5rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    opacity: 0;
+
+  }
+  .start1{
+    animation: f1 2s  infinite;
+  }
+  .start2{
+    animation: f2 2s  infinite;
+  }
+  .start3{
+    animation: f3 2s  infinite;
+  }
+  p{
+    font-size: .48rem;
+    font-family: "DINProBold";
+    text-align: center;
+  }
+  .description{
+    width: 10.51rem;
+    font-size: .24rem;
+    font-family: "DINProRegular";
+    margin: 0 auto;
+    text-align:center;
+  }
+  .description:nth-of-type(1){
+    margin-top: .46rem;
+  }
+  .img{
+    // @include libBgImage('pc/sec10/product.png',true,true);
+    width: 11.97rem;
+    height: 6.11rem;
+    margin: .36rem auto 0;
+  }
+  p:nth-of-type(2){
+    margin-top: 3.04rem;
+  }
+  .add{
+    margin-top: .3rem;
+    width: 12rem;
+  }
+  .show{
+    width: 26.40rem;
+    height: 4.3rem;
+    display: flex;
+    transform: translateX(-3.6rem);
+    justify-content: space-between;
+    align-items: center;
+    margin-top: .96rem;
+    .left{
+      @include libBgImage('pc/sec10/left.png',true,true);
+      width: 7.2rem;
+      height: 3.3rem;
+    }
+    .mid{
+      @include libBgImage('pc/sec10/mid.png',true,true);
+      width: 9.4rem;
+      height:4.3rem;
+    }
+    .right{
+      @include libBgImage('pc/sec10/right.png',true,true);
+      width: 7.2rem;
+      height: 3.3rem;
+    }
+  }
+
+}
+
+.common3{
+  .box_top{
+    color: #fff;
+    background: linear-gradient(to right, #382C78, #398ECE);
+  }
+  .box_bottom{
+    color: #fff;
+    background: linear-gradient(to right, #D7FE54, #0EDBC6);
+  }
+}
+.part1{
+  position: relative;
+  .sec12{
+    position: absolute;
+  }
+}
+.sec11{
+  // margin-top: -.89rem;
+  transition: all 1s;
+  @include libBgImage('pc/sec11/bg.png',true,true);
+  height: 10.8rem;
+  padding-top: 2.14rem;
+  position: relative;
+  p{
+    font-size: .48rem;
+    font-family: "DINProBold";
+    text-align: center;
+  }
+  .description{
+    font-size: .24rem;
+    font-family: "DINProRegular";
+    margin: .3rem auto 0;
+    text-align:center;
+    width: 8.15rem;
+    color: #666666;
+
+  }
+  .img{
+    @include libBgImage('pc/sec11/product.png',true,true);
+    width: 10.1rem;
+    height: 3.44rem;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transition: all 1s;
+  }
+}
+.sec11add{
+  @include libBgImage('pc/sec12/bgs.png',true,true);
+  .img{
+    opacity: 0;
+    transition: all 1s
+  }
+  transition: all 1s
+}
+.sec12{
+  // @include libBgImage('pc/sec12/bgs.png',true,true);
+  height: 10.8rem;
+  width: 19.2rem;
+  padding-top: 2.14rem;
+  position: relative;
+  top: 0;
+  p{
+    font-size: .48rem;
+    font-family: "DINProBold";
+    text-align: center;
+  }
+  .description{
+    font-size: .24rem;
+    font-family: "DINProRegular";
+    text-align: center;
+    width: 7.47rem;
+    margin: .3rem auto 0;
+    color: #666666;
+  }
+  .img{
+  @include libBgImage('pc/sec12/product.png',true,true);
+  position: absolute;
+  width: 9.07rem;
+  height: 3.24rem;
+  left: 0;
+  bottom: 0.04rem;
+  opacity: 0;
+  transition: all 1s;
+  }
+  .tip{
+    font-size: .12rem;
+    width: 12rem;
+    margin: 6.5rem auto 0;
+    text-align: center;
+    font-family: "DINProRegular";
+    color:#B1B1B1
+  }
+}
+.sec12add{
+  .img{
+    opacity: 1;
+    transition: all 1s
+  }
+}
+.sec13{
+  @include libBgImage('pc/sec13/bg.png',true,true);
+  height: 10.8rem;
+  position: relative;
+  .box{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin:auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 12rem;
+    height: 7.35rem;
+    justify-content: space-around;;
+    .f1{
+      @include libBgImage('pc/sec13/f1.png',true,true);
+      width: 5.83rem;
+      height:2.76rem;
+    }
+    .f2{
+      @include libBgImage('pc/sec13/f2.png',true,true);
+      width: 5.83rem;
+      height:4.32rem;
+    }
+    .f3{
+      @include libBgImage('pc/sec13/f3.png',true,true);
+      width: 5.84rem;
+      height:7.35rem;
+    }
+    .left{
+      display: flex;
+      width: 5.83rem;
+      flex-wrap: wrap;
+      align-content: space-between;
+    }
+    }
+  }
+.sec14{
+  @include libBgImage('pc/sec14/bg.png',true,true);
+  height:10.8rem;
+  padding-top: .8rem;
+  position: relative;
+
+  p{
+    font-size: .48rem;
+    font-family: "DINProBold";
+  }
+  .description{
+    font-size: .24rem;
+    font-family: "DINProRegular";
+    width: 4.35rem;
+    color:#666666;
+
+  }
+  .text-content{
+
+    height: 1.48rem;
+    width: 12rem;
+    margin: 0 auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    div{
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    .silder-1{
+      @include libBgImage('pc/sec14/f1copy.png');
+      background-size:contain;
+      opacity: 0;
+    }
+    .silder-2{
+      @include libBgImage('pc/sec14/f2copy.png');
+      background-size:contain;
+      opacity: 0;
+
+    }
+    .silder-3{
+      @include libBgImage('pc/sec14/f3copy.png');
+      background-size:contain;
+     opacity: 0;
+
+    }
+    .silder-4{
+      @include libBgImage('pc/sec14/f4copy.png');
+      background-size:contain;
+     opacity: 0;
+
+    }
+  }
+  .color-content{
+
+    width: 5.42rem;
+    height: 3.77rem;
+    margin-top: .3rem;
+    background-size: contain;
+    margin-left: 0;
+    .f1111{
+      @include libBgImage('pc/sec14/f1111.png');
+      background-size:contain;
+    }
+    .f2222{
+      @include libBgImage('pc/sec14/f2222.png');
+      background-size:contain;
+    }
+    .f3333{
+      @include libBgImage('pc/sec14/f3333.png');
+      background-size:contain;
+    }
+    .f4444{
+      @include libBgImage('pc/sec14/f4444.png');
+      background-size:contain;
+    }
+  }
+
+  .bbox{
+    position: relative;
+  }
+  .btn{
+    display: flex;
+    margin-top: .7rem;
+    div{
+      width:.35rem;
+      height: .37rem;
+      margin-left: .18rem;
+      cursor: pointer;
+    }
+    .color{
+      width: .25rem;
+      height: .25rem;
+      border-radius:.05rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+    }
+    .f1{
+      @include libBgImage('pc/sec14/f1.png',true,true);
+      margin-left: 0;
+      .color{
+        background-color: #6BF1EA;
+      }
+    }
+    .f2{
+      @include libBgImage('pc/sec14/f2.png',true,true);
+      .color{
+        background-color: #E7E7E8;
+      }
+    }
+    .f3{
+      @include libBgImage('pc/sec14/f3.png',true,true);
+      .color{
+        background-color: #D7FE54;
+      }
+
+    }
+    .f4{
+      @include libBgImage('pc/sec14/f4.png',true,true);
+      .color{
+        background-color:  #626262;
+      }
+    }
+  }
+  .img{
+    // @include libBgImage('pc/sec14/f11.png',true,true);
+    width: 7.79rem;
+    height: 11.20rem;
+    position: absolute;
+    right: 2.5rem;
+    top: -1rem;
+    .silder-1{
+      @include libBgImage('pc/sec14/f11.png',true,true);
+    }
+    .silder-2{
+      @include libBgImage('pc/sec14/f22.png',true,true);
+    }
+    .silder-3{
+      @include libBgImage('pc/sec14/f33.png',true,true);
+    }
+    .silder-4{
+      @include libBgImage('pc/sec14/f44.png',true,true);
+    }
+  }
+  .pagination {
+      position: absolute;
+      left: .3rem;
+      bottom: .8rem;
+      z-index: 6;
+      width: auto;
+    }
+}
+.common4{
+  .box_top{
+    color: #fff;
+    background: linear-gradient(to right, #2ED5C1, #398ECE);
+  }
+  .box_bottom{
+    color: #fff;
+    background-color: #000;
+  }
+}
+.sec15{
+  height:10.8rem;
+  position: relative;
+  margin-top: -.89rem;
+  padding-top: 9rem;
+  .img{
+    @include libBgImage('pc/sec15/big.png',true,true);
+    width: 7.71rem;
+    height:4.34rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  .text{
+    @include libBgImage('pc/sec15/text.png',true,true);
+    width: 11.77rem;
+    height: 2.12rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  .description{
+    width: 12rem;
+    margin: 0 auto;
+    font-size: .24rem;
+    font-family: "DINProRegular";
+    text-align: center;
+  }
+}
+.sec16{
+  @include libBgImage('pc/sec15/big.png',true,true);
+  height:10.8rem;
+}
+.sec17{
+  @include libBgImage('pc/sec16/bg.png',true,true);
+  background-size: contain;
+  background-position:top;
+  background-repeat: no-repeat;
+  position: relative;
+  padding-top: 14rem;
+  overflow-x: hidden;
+  .people{
+    @include libBgImage('pc/sec16/woman.png',true,true);
+    width: 7.54rem;
+    height:12.76rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .text{
+    font-size: .32rem;
+    font-family: "DINProRegular";
+    position: absolute;
+    right: 3.5rem;
+    top: 9.4rem;
+  }
+  .phone{
+    @include libBgImage('pc/sec16/product.png',true,true);
+    width: 11.24rem;
+    height: 8.92rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .triger{
+    width:19.2rem;
+    top: 11rem;
+    position: absolute;
+    height:1px;
+  }
+  .imgs{
+    display:flex;
+    width: 23.1rem;
+    justify-content:space-around;
+    margin-bottom: 2.4rem;
+
+    .f1{
+      @include libBgImage('pc/sec16/f1.png',true,true);
+      width: 4.7rem;
+      height:6.3rem;
+    }
+    .f2{
+      @include libBgImage('pc/sec16/f2.png',true,true);
+      width: 4.29rem;
+      height: 5.55rem;
+    }
+    .f3{
+      @include libBgImage('pc/sec16/f3.png',true,true);
+      width: 4.22rem;
+      height: 6.24rem;
+    }
+    .f4{
+      @include libBgImage('pc/sec16/f4.png',true,true);
+      width: 6.81rem;
+      height: 6.21rem;
+    }
+  }
+}
+.part2{
+  position: relative;
+}
+.sec18{
+  background-color: #F7F7F7;
+  height: 10.8rem;
+  position: relative;
+  .logo{
+    @include libBgImage('pc/sec18/logo.png',true,true);
+    width: 5.34rem;
+    height: 5.6rem;
+    position:absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+  }
+}
+.sec19{
+  @include libBgImage('pc/sec19/bg.png',true,true);
+  height: 10.8rem;
+  padding-top: 5.41rem;
+  position: absolute;
+  top: 0;
+  opacity: 1;
+  .text-box{
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+  p{
+    font-size: .32rem;
+    font-family: "DINProBold";
+    text-align: center;
+    font-weight: 800;
+  }
+  .description{
+    width: 7rem;
+    margin: .3rem auto 0;
+    font-size: .24rem;
+    font-family: "DINProRegular";
+    text-align: center;
+  }
+}
+.sec20{
+  height: 10.8rem;
+  position: relative;
+  span{
+    @include libBgImage('pc/sec20/f3.png',true,true);
+    width: .3rem;
+    background-size: contain;
+    display: inline-block;
+    background-repeat: no-repeat;
+    height: 0.21rem;
+    background-size: 0.3rem 0.16rem;
+    background-position: center;
+  }
+  .box{
+    display: flex;
+    height:5.59rem;
+    width: 14.40rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    align-items:center;
+    justify-content: space-between;
+
+    .left{
+      @include libBgImage('pc/sec20/bg.png',true,true);
+      width: 7.36rem;
+      height:5.59rem;
+    }
+    .right{
+      font-size: .32rem;
+      font-family: "DINProRegular";
+      .text{
+        @include libBgImage('pc/sec20/text.png',true,true);
+        width: 2.9rem;
+        height: .73rem;
+        margin-bottom: .25rem;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  body {
+    height: 100vh;
+  }
+  .sec{
+    width: 3.6rem;
+  }
+  .pc{
+    display: none !important;
+  }
+  .content{
+    width: 3rem !important;
+    margin: 0 auto;
+  }
+  .mob{
+    display: block;
+  }
+  .common{
+    .top{
+      width:22rem;
+      animation: toRight 60s linear infinite normal;
+    }
+    .box_top{
+      transform: rotate(3deg);
+      width: 4.6rem;
+      height: .18rem;
+      position: absolute;
+      z-index: 2;
+    }
+    .box_bottom{
+      transform: rotate(-3deg);
+      width: 4.6rem;
+      height: .18rem;
+      color: #fff;
+      background: #000;
+    }
+    .text{
+      width: 1.1rem;
+      height:.18rem;
+      line-height: .18rem;
+      font-size: .08rem;
+      font-family: "DINProRegular";
+      span{
+        font-family: "DINProBold";
+        font-weight: 800;
+      }
+    }
+    .bottom{
+      width:22rem;
+      animation: toLeft 60s linear infinite normal;
+    }
+  }
+  .sec1{
+    height: 7.26rem;
+    @include libBgImage('mob/sec1/bg.png', true);
+    background-repeat: no-repeat;
+
+    .video-container{
+      height:6.4rem;
+    }
+    .video-bg-img{
+      @include libBgImage('mob/sec1/bg.png', true);
+      height: 6.4rem;
+    }
+    video{
+      height:6.4rem;
+    }
+    padding-top:.76rem;
+    background-size: contain;
+    background-position:top;
+    background-repeat: no-repeat;
+    .logo{
+      @include libBgImage('mob/sec1/text.png',true);
+      height:.265rem;
+      width: 1.95rem;
+      transform:unset;
+      margin: 0 auto;
+    }
+    .product{
+      width: 3.17rem;
+      height: 2.85rem;
+      @include libBgImage('mob/sec1/product.png', true);
+      margin: .85rem auto 0;
+      transform:unset;
+    }
+    .add{
+      @include libBgImage('mob/sec1/logo.png',true);
+      width:1.67rem;
+      height: 1.57rem;
+      margin: 0.62rem auto 0;
+    }
+  }
+  .sec2{
+    height:9.7rem;
+    @include libBgImage('mob/sec2/bg.png',true) ;
+    padding-top:.76rem;
+    background-size: contain;
+    background-position:top;
+    background-repeat: no-repeat;
+    .product{
+      width: 3.11rem;
+      height: .855rem;
+      margin: 0 auto;
+      @include libBgImage('mob/sec2/product.png', true,true);
+    }
+    .list{
+      margin: 0 auto;
+      flex-wrap: wrap;
+      width: unset;
+
+      .left{
+        order: 2;
+        margin-left: .29rem;
+        margin-top: .15rem;
+        .f1{
+          width: 1.39rem;
+          height: 1.42rem;
+          @include libBgImage('mob/sec2/f1.png', true,true);
+          padding-top:1.05rem;
+          .des{
+            width: unset;
+            font-size: .08rem;
+            margin-left: .33rem;
+          }
+          .wave1{
+            width: 1.39rem;
+            height: 1.42rem;
+          }
+          .wave2{
+            width: 1.39rem;
+            height: 1.42rem;
+          }
+          .wave3{
+            width: 1.39rem;
+            height: 1.42rem;
+          }
+          .wave4{
+            width: 1.39rem;
+            height: 1.42rem;
+          }
+
+        }
+        .f2{
+          width: 1.39rem;
+          height: .89rem;
+          @include libBgImage('mob/sec2/f2.png', true,true);
+          padding-top:.26rem;
+          margin-top: .09rem;
+          background-size: contain;
+          .des{
+            width: unset;
+            font-size: .08rem;
+            margin-left: .33rem;
+            span{
+              font-size: .16rem;
+            }
+          }
+        }
+        .f3{
+          width: 1.39rem;
+          height: 1.48rem;
+          @include libBgImage('mob/sec2/f3.png', true,true);
+          background-size:contain;
+          padding-top:.24rem;
+          margin-top: .09rem;
+          .des{
+            width: unset;
+            font-size: .08rem;
+            margin-left: .33rem;
+            span{
+              font-size: .16rem;
+              line-height:.2rem
+            }
+          }
+          .wave1{
+            width: 1.39rem;
+            height: 1.42rem;
+          }
+          .wave2{
+            width: 1.39rem;
+            height: 1.42rem;
+          }
+          .wave3{
+            width: 1.39rem;
+            height: 1.42rem;
+          }
+          .wave4{
+            width: 1.39rem;
+            height: 1.42rem;
+          }
+        }
+      }
+      .mid{
+        order: 1;
+        margin: 0.56rem auto 0;
+        .f4{
+          width: 3.01rem;
+          height: 2.16rem;
+          margin-top: unset;
+          @include libBgImage('mob/sec2/f4.png', true,true);
+          background-size:contain;
+          padding-top:1.65rem;
+          .des{
+            font-size: .08rem;
+            margin-left: .14rem;
+            span{
+              font-size: .2rem;
+            }
+          }
+        }
+        .f5{
+          width: 3rem;
+          height: .91rem;
+          margin-top: .15rem;
+          @include libBgImage('mob/sec2/f5.png', true,true);
+          padding-top:.2rem;
+          background-size: contain;
+          .des{
+            font-size: .08rem;
+            margin-left: .14rem;
+            span{
+              font-size: .2rem;
+            }
+          }
+        }
+      }
+      .right{
+        order: 3;
+        margin-top: .7rem;
+        margin-left: .13rem;
+        .f6{
+          width: 1.625rem;
+          height: 2.91rem;
+          margin-top: unset;
+          @include libBgImage('mob/sec2/f6.png', true,true);
+          padding-top:.26rem;
+          background-size: contain;
+          .des{
+            font-size: .08rem;
+            margin-left: .2rem;
+            span{
+              font-size: .16rem;
+              line-height: .2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  .sec3{
+    height: 5.8rem;
+    .video-container{
+      background: unset;
+    }
+    .video{
+      // @include libBgImage("mob/sec3/bg.png");
+      width: 3rem;
+      height: 5.335rem;
+      background-size: contain;
+    }
+    @include libBgImage("mob/sec3/bg.png");
+    background-position: center;
+    background-size: 3rem 5.335rem;
+    background-repeat: no-repeat;
+
+  }
+  .common1{
+
+  }
+  .sec4{
+    @include libBgImage('mob/sec4/bg.png',true);
+    height: 7.91rem;
+    padding-top:1rem;
+    .sec4-box{
+      width: 3rem;
+      margin: 0 auto;
+      p{
+        font-size: .16rem;
+        font-weight: 800;
+        margin-top: 0rem;
+      }
+      .description{
+        font-size: .12rem;
+      }
+      .product{
+        @include libBgImage('mob/sec4/f1.png',true);
+        width: 3rem;
+        height: 3rem;
+        margin-top: .45rem;
+      }
+      .score{
+        flex-wrap: wrap;
+        margin-top: .28rem;
+        height: unset;
+        .left{
+          width:3rem;
+          padding-left:unset;
+          padding-top: unset;
+          @include libBgImage('mob/sec4/left.png',true);
+          background-size: auto 0.56rem;
+          text-align: left;
+          line-height: .1rem;
+          height: 0.56rem;
+          padding-left: 1.5rem;
+          padding-top: 0.1rem;
+          span{
+            font-size: .12rem;
+          }
+        }
+        .right{
+          width: 3rem;
+          padding-left:unset;
+          padding-top: unset;
+          @include libBgImage('mob/sec4/right.png',true);
+          background-size: auto 0.45rem;
+          background-position:right top;
+          height: 0.45rem;
+          display: inline-block;
+          line-height: .15rem;
+          text-align: left;
+          padding-top: .2rem;
+          span{
+            font-size: .12rem;
+            margin-top: .27rem;
+          }
+        }
+      }
+      .tip{
+        font-size: .08rem;
+        margin-top: .35rem;
+      }
+    }
+
+  }
+  // .sec5{
+  //   @include libBgImage('mob/sec5/bg.png',true);
+  //   height: 6.4rem;
+  //   padding-top:.8rem;
+  //   .img{
+  //     @include libBgImage('mob/sec5/product.png',true);
+  //     width: 1.505rem;
+  //     height: 1.51rem;
+  //     margin-left: 0.73rem;
+
+  //   }
+  //   .text{
+  //     margin: 0 auto;
+
+  //     p{
+  //       font-size: .16rem;
+  //       text-align:center;
+  //       line-height: unset;
+  //     }
+  //     .description{
+  //       font-size: .12rem;
+  //     }
+  //   }
+  // }
+  .sec5{
+    @include libBgImage('mob/sec5/bg.png',true);
+    height: 6.4rem;
+    padding-top:.8rem;
+    position: relative;
+    .img{
+      @include libBgImage('mob/sec5/product.png',true);
+      width: 1.505rem;
+      height: 1.51rem;
+      margin-left: 0.73rem;
+      position: absolute;
+      top: 2.58rem;
+      left: 0;
+      right: 0;
+      margin: auto;
+
+    }
+    .text{
+      margin: 0 auto;
+
+      p{
+        font-size: .16rem;
+        text-align:center;
+        line-height: unset;
+      }
+      .description{
+        font-size: .12rem;
+        margin-top: .2rem;
+        width: 3rem;
+        text-align:center;
+      }
+    }
+    .parameter{
+      margin-top: 3rem;
+      div{
+        font-size: .08rem;
+        margin-bottom: .1rem;
+      }
+      .one{
+        div{
+          @include libBgImage('mob/sec5/one.png',true);
+          width: .64rem;
+          height:.21rem
+        }
+      }
+      .two{
+       div{
+        @include libBgImage('mob/sec5/two.png',true);
+          width: .52rem;
+          height:.21rem
+       }
+      }
+      .three{
+       div{
+        @include libBgImage('mob/sec5/three.png',true);
+        width: .87rem;
+        height:.21rem
+       }
+      }
+
+    }
+    .tip{
+      width: 3rem;
+      font-size: .06rem;
+      margin-top: .1rem;
+    }
+  }
+  .sec6{
+    @include libBgImage('mob/sec6/bg.png',true);
+    height:6.4rem;
+    padding-top: 1.45rem;
+    background-size: contain;
+    .text{
+      p{
+        font-size: .16rem;
+        text-align:center;
+      }
+      .description{
+        font-size: .12rem;
+        width: 3.1rem;
+        margin: 0.15rem auto 0;
+        text-align:center;
+
+      }
+    }
+    .parameter{
+      width: 2.16rem;
+      margin: .34rem auto 0;
+      height: .52rem;
+      div{
+        @include libBgImage('mob/sec6/f1.png',true);
+        height: .14rem;
+        background-size: contain;
+        font-size: .08rem;
+        padding-left: .26rem;
+        width: auto;
+        line-height: .14rem;
+      }
+    }
+  }
+  .sec7{
+    @include libBgImage('mob/sec7/bg.png',true);
+    height: 6.4rem;
+    .score{
+      @include libBgImage('mob/sec7/score.png',true);
+      width: 1.53rem;
+      height: .85rem;
+      top: .45rem;
+      left: .35rem;
+    }
+    .person{
+      @include libBgImage('mob/sec7/people.png',true);
+      width: 2.05rem;
+      height:3.19rem;
+      top: 3rem;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+    .text{
+      width: 3rem;
+      margin: 0 auto;
+      top: 1.23rem;
+      left:0;
+      right: 0;
+      margin: auto;
+      text-align: center;
+      p{
+        font-size: .4rem;
+      }
+      p:nth-of-type(2){
+        margin-top: -.2rem;
+      }
+      .description{
+        width: 2.9rem;
+        font-size: .12rem;
+        margin: 0 auto;
+
+      }
+      .switch{
+        @include libBgImage('mob/sec7/open.png',true);
+        width: .29rem;
+        height: .14rem;
+        margin-top: -0.29rem;
+        margin-right: 0.3rem;
+      }
+    }
+  }
+  .common2{
+    top: unset;
+    background-color:unset
+    .box_bottom{
+      transform: rotate(-3deg);
+    }
+    .box_top{
+      transform: rotate(3deg);
+    }
+    .top{
+      width:24rem
+    }
+    .text{
+      width:1.2rem
+    }
+    .box_top{
+      color: #fff;
+      background: linear-gradient(to right, #2ED5C1, #398ECE);
+    }
+    .box_bottom{
+      color: #fff;
+      background: linear-gradient(to right, #D7FE54, #0EDBC6);
+    }
+  }
+  .sec8{
+    @include libBgImage('mob/sec8/bg.png',true);
+    height: 6.4rem;
+    margin-top: 0rem;
+    padding-top: 1.17rem;
+    height: 100vh;
+    overflow: hidden;
+    p{
+      font-size: .16rem;
+    }
+    P:nth-of-type(2){
+      margin-top: 1.4rem;
+      padding-bottom: 1.05rem;
+    }
+    P:nth-of-type(3){
+      margin-top: 1.1rem;;
+    }
+    .description{
+      width: 2.135rem;
+      text-align:center;
+      color: #fff;
+      margin: 0 auto 0;
+      font-size: .08rem;
+      margin-top: .22rem;
+    }
+    .hand{
+      @include libBgImage('mob/sec8/hand_02.png',true);
+      width: 3.6rem;
+      height: 2.43rem;
+      margin-top: 1.1rem;
+      .left{
+        @include libBgImage('mob/sec8/left.png',true);
+        width: 1.17rem;
+        height: 2.435rem;
+      }
+      .right{
+        @include libBgImage('mob/sec8/right.png',true);
+        width: 1.17rem;
+        height: 2.43rem;
+      }
+    }
+    .phone{
+      @include libBgImage('mob/sec8/phone.png',true);
+      width: 2.88rem;
+      height: 1.32rem;
+    }
+    .mask{
+      @include libBgImage('mob/sec8/mask.png',true);
+      width: 2.735rem;
+      height: 1.2rem;
+      margin-top: -2.25rem;
+      padding-top: 0.18rem;
+      div{
+        font-size:.12rem;
+        font-family: "DINProRegular";
+        height: .2rem;
+        line-height:.2rem;
+        color: #fff;
+        margin-left: 0.3rem;
+      }
+      div:nth-of-type(even){
+        height:.235rem;
+        line-height: .235rem;
+      }
+    }
+    .tip{
+      font-size: .08rem;
+      width: 2.135rem;
+      margin: -7.3rem auto 0;
+    }
+    .add{
+      width: 2.45rem;
+    }
+  }
+  .sec9{
+    @include libBgImage('mob/sec9/bg.png',true);
+    height:6.4rem;
+    background-size: contain;
+    padding-top:1.49rem;
+    p{
+      color: #fff;
+      font-family: "DINProBold";
+      text-align: center;
+      font-size: .16rem;
+    }
+    .description{
+      width: 3rem;
+      text-align: center;
+      color: #fff;
+      margin: 0 auto 0;
+      font-size: .12rem;
+      margin-top: 0.22rem;
+    }
+  }
+  .sec10{
+    @include libBgImage('mob/sec10/bg.png',true);
+    height: 6.4rem;
+    padding-top:1.6rem;
+    margin-top: 0;
+    p:nth-of-type(2){
+      font-size: .16rem;
+      margin-top: 0rem;
+    }
+    .description{
+      font-size: .12rem;
+      width: 3.04rem;
+    }
+    .show{
+      display: block;
+      @include libBgImage('mob/sec10/product.png',true);
+      width:2.88rem;
+      height: 1.32rem;
+      transform:unset;
+      margin: .5rem auto;
+    }
+  }
+  .common3{
+    .box_top{
+      color: #fff;
+      background: linear-gradient(to right, #382C78, #398ECE);
+    }
+    .box_bottom{
+      color: #fff;
+      background: linear-gradient(to right, #D7FE54, #0EDBC6);
+    }
+  }
+  .sec11{
+    @include libBgImage('mob/sec11/bg.png',true);
+    background-size: contain;
+    margin-top: 0rem;
+    height: 6.4rem;
+    padding-top:1rem;
+    height: 100vh;
+    overflow: hidden;
+    p{
+      font-size: .16rem;
+    }
+    .description{
+      font-size: .12rem;
+      width: 3rem;
+      margin-top: .2rem;
+    }
+    .img{
+      @include libBgImage('mob/sec11/phone.png',true);
+      width: 1.635rem;
+      height: 2.72rem;
+      bottom:1rem;
+    }
+  }
+  .sec11addmob{
+    @include libBgImage('mob/sec12/bg.png');
+    .img{
+      opacity: 0;
+      transition: all 1s
+    }
+    transition: all 1s
+  }
+
+  .sec12{
+    // @include libBgImage('mob/sec12/bg.png',true);
+    height: 6.4rem;
+    padding-top:1rem;
+    width: 3.6rem;
+    margin: 0 auto;
+    p{
+      font-size: .16rem;
+      width: 3.6rem;
+    }
+    .description{
+      font-size: .12rem;
+      width: 2.9rem;
+      margin-top: .2rem;
+    }
+    .img{
+      @include libBgImage('mob/sec12/phone.png',true);
+      width: 1.635rem;
+      height: .42rem;
+      bottom: 3.239rem;
+    }
+    .tip{
+      font-size: .06rem;
+      width: 3rem;
+      margin: 3.9rem auto 0;
+    }
+  }
+  .sec12addmob{
+    .img{
+      opacity: 1;
+      transition: all 1s
+    }
+  }
+  .sec13{
+    @include libBgImage('mob/sec13/bg.png',true);
+    height: 9.645rem;
+    .box{
+      width:3rem;
+      height: 7.8rem;
+      .left{
+        order: 2;
+        .f1{
+          @include libBgImage('mob/sec13/f1.png',true);
+          width: 2.995rem;
+          height: 1.42rem;
+        }
+        .f2{
+          @include libBgImage('mob/sec13/f2.png',true);
+          width: 2.995rem;
+          height: 2.22rem;
+        }
+      }
+      .right{
+        order: 1;
+        .f3{
+          @include libBgImage('mob/sec13/f3.png',true);
+          width: 3rem;
+          height: 3.78rem;
+        }
+      }
+    }
+  }
+  .sec14{
+    @include libBgImage('mob/sec14/bg.png',true);
+    height: 6.4rem;
+    padding-top:.15rem;
+    .content{
+      margin-top: -.3rem;
+      p{
+        font-size: .16rem;
+        text-align: center;
+        font-weight: 800;
+      }
+      .description{
+        font-size: .12rem;
+        width: 2.4rem;
+        text-align: center;
+        margin: 0.2rem auto 0 ;
+      }
+
+    }
+    .img{
+      // @include libBgImage('pc/sec14/f11.png',true);
+      width:2.64rem;
+      height:3.8rem;
+      left: 0;
+      margin: auto;
+      top: 2rem;
+      left: 0.45rem;
+      // background-repeat:no-repeat;
+      // background-size: contain;
+    }
+    .text-content{
+      width: 3.6rem;
+      height: .64rem;
+      .silder-1{
+        @include libBgImage('mob/sec14/f111.png',true);
+        height: 0.64rem;
+        width: 3.6rem;
+        background-position: center;
+        background-size: contain;
+      }
+      .silder-2{
+        @include libBgImage('mob/sec14/f222.png',true);
+        height: 0.64rem;
+        width: 3.6rem;
+        background-position: center;
+        background-size: contain;
+      }
+      .silder-3{
+        @include libBgImage('mob/sec14/f333.png',true);
+        height: 0.64rem;
+        width: 3.6rem;
+        background-position: center;
+        background-size: contain;
+      }
+      .silder-4{
+        @include libBgImage('mob/sec14/f444.png',true);
+        height: 0.64rem;
+        width: 3.6rem;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+    .color-content{
+      @include libBgImage('mob/sec14/f11.png',true);
+      width: 1.435rem;
+      height: 1.035rem;
+      margin: 0 auto;
+      .f1111{
+        @include libBgImage('mob/sec14/f1111.png',true);
+      }
+      .f2222{
+        @include libBgImage('mob/sec14/f2222.png',true);
+      }
+      .f3333{
+        @include libBgImage('mob/sec14/f3333.png',true);
+      }
+      .f4444{
+        @include libBgImage('mob/sec14/f4444.png',true);
+      }
+    }
+    .btn{
+      width: 1rem;
+      justify-content: space-between;
+      margin: 3.4rem auto 0;
+      div{
+        width:.195rem;
+        height:.2rem;
+        margin-left: 0;
+      }
+      .color{
+        width:.15rem;
+        height:.15rem;
+      }
+      .f1{
+        @include libBgImage('mob/sec14/f1.png',true);
+      }
+      .f2{
+        @include libBgImage('mob/sec14/f2.png',true);
+      }
+      .f3{
+        @include libBgImage('mob/sec14/f3.png',true);
+      }
+      .f4{
+        @include libBgImage('mob/sec14/f4.png',true);
+      }
+    }
+  }
+
+  .sec15{
+    margin-top: -.15rem;
+    height: 3.83rem;
+    padding-top: 2.65rem ;
+    // height: 100vh;
+    .img{
+      @include libBgImage('mob/sec15/big.png',true);
+      width: 2.16rem;
+      height: 1.445rem;
+      top: .75rem;
+      bottom: unset;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position:center;
+    }
+    .text{
+      @include libBgImage('mob/sec15/text.png',true);
+      width:3.29rem;
+      height:.59rem;
+      top: 1.1rem;
+      bottom: unset;
+    }
+    .description{
+      font-size: .12rem;
+      width:3rem;
+
+    }
+  }
+  .sec17{
+    height:19.9rem;
+    @include libBgImage('mob/sec16/bg.png',true);
+    background-size: contain;
+    padding-top: 8rem;
+    .phone{
+      @include libBgImage('mob/sec16/phone.png',true);
+      width:3.6rem;
+      height:3.35rem;
+    }
+    .people{
+      @include libBgImage('mob/sec16/people.png',true);
+      width:3.6rem;
+      height:4.71rem;
+      top: 4.5rem;
+    }
+    .text{
+      font-size: .16rem;
+      top: 4rem;
+      right: 0;
+    }
+
+    .imgs{
+      width: unset;
+      flex-wrap: wrap;
+      margin-bottom: unset;
+      div{
+        width: 3.6rem;
+        background-repeat: no-repeat;
+      }
+      .f1{
+        @include libBgImage('mob/sec16/f1.png',true);
+        background-size: 2.49rem 3.65rem;
+        height: 3.65rem;
+        background-position: .2rem;
+      }
+      .f2{
+        @include libBgImage('mob/sec16/f2.png',true);
+        background-size: 2rem 2.61rem;
+        height: 2.61rem;
+        background-position: right;
+        margin-top: -.7rem;
+      }
+      .f3{
+        @include libBgImage('mob/sec16/f3.png',true);
+        background-size: 3.045rem 2.975rem;
+        height: 2.975rem;
+        background-position: .1rem;
+      }
+      .f4{
+        @include libBgImage('mob/sec16/f4.png',true);
+        background-size:2.12rem 2.915rem;
+        height:2.915rem;
+        background-position: right;
+        margin-top: -.4rem;
+      }
+    }
+  }
+  .sec18{
+    // @include libBgImage('mob/sec18/bg.png',true);
+    height:6.4rem;
+    .logo{
+      @include libBgImage('mob/sec18/logo.png',true);
+      width:1.75rem;
+      height:1.86rem;
+    }
+  }
+  .sec19{
+    @include libBgImage('mob/sec19/bg.png',true);
+    height:6.4rem;
+    padding-top:2.2rem;
+    p{
+      font-size: .16rem;
+      width:1.85rem;
+      text-align:left;
+      margin-left: 1.5rem;
+      line-height:.2rem;
+    }
+    .description{
+      font-size: .12rem;
+      width:1.85rem;
+      text-align:left;
+      margin-left: 1.5rem;
+      margin-top: .15rem;
+    }
+  }
+  .sec20{
+    height: 6.4rem;
+    span{
+      @include libBgImage('mob/sec20/f3.png',true);
+      background-size: .12rem .07rem;
+      width: .12rem;
+      height: .07rem;
+    }
+    .box{
+      width:3rem;
+      height: 3.8rem;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-content: space-between;
+      .left{
+        @include libBgImage('mob/sec20/f1.png',true);
+        width: 2.625rem;
+        height: 1.995rem
+      }
+      .right{
+        .text{
+          @include libBgImage('mob/sec20/text.png',true);
+          width:1.12rem;
+          height: .285rem;
+          margin-bottom: 0.16rem;
+        }
+        font-size: .12rem;
+      }
+    }
+  }
+
+}

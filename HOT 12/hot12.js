@@ -1,14 +1,14 @@
 require("intersection-observer");
 import LazyLoad from "vanilla-lazyload";
-var videoPath = "/fileadmin/assets/v/smart/smart6plus/images/";
+var videoPath = "/assets/images/hot11-play/video/";
 
 
-var imagePath = "/fileadmin/assets/v/smart/smart6plus/images/";
+// var imagePath = "/assets/images/hot12/";
 
 
 
-// var videoPath = "/fileadmin/assets/v/hot/hot12/images/";
-// var imagePath = "https://infinixmob.mez100.com.cn/fileadmin/assets/v/smart/smart6hd/images/";
+var videoPath = "/fileadmin/assets/v/hot/hot12/images/";
+var imagePath = "/fileadmin/assets/v/hot/hot12/images/";
 // var videoPath = "/assets/images/hot12/";
 
 
@@ -496,33 +496,6 @@ var overview = {
     );
   },
 
-  createImg: function(elem, option) {
-    const canvas = document.querySelector(elem + ' canvas');
-    let i = 0
-    let arr = [];
-
-    while( i < option.len) {
-      arr.push('<img class="lazy" data-src="'+ imagePath + option.file + i + '.' + (option.ext ? option.ext : 'png') +'" alt="" />')
-      i++;
-    }
-
-    $(canvas).html(arr.join(''));
-
-    // this.elLazy.update();
-  },
-  play: function(elem) {
-    const canvas = document.querySelector(elem + ' canvas');
-
-    const imgs = canvas.querySelectorAll('img');
-    const o = new ImageSequence(Array.from(imgs));
-
-    o.load()
-    imgs.forEach(function(item) {
-      LazyLoad.load(item)
-    })
-    return new CanvasPlayer(canvas, o);
-  },
-
   pageInit: function () {
     var self = this;
     window.addEventListener("resize", function () {
@@ -542,178 +515,69 @@ var overview = {
       })
     })
   },
-  setSec3: function () {
+
+  setPart1: function() {
     if (utls.isPc) {
-      this.setSec3Pc();
+      this.setPart1Pc();
     } else {
-      this.setSec3Mb();
+      // this.setPart1Mb();
     }
   },
-  setSec3Pc: function () {
+  setPart1Pc: function() {
     var elem = document.querySelector(".sec3");
 
     if (!elem) {
       return
     }
     var winHeight = $('.sec3').height();
-     function a() {
-      $('.active video')[0].play();
-    }
+    var tm = new TimelineMax({repeat: -1});
+    tm.to("#myText", 2, {text:{value:"春眠不觉晓",newClass:"class2", oldClass:"class1"}, ease:Linear.easeNone})
 
     this.setScene([(new TimelineMax)
-
+      .from(".test p",1,{opacity:0,y:40,ease:Back.easeOut},"a")
+      .from(".test .description",1,{opacity:0,y:20,ease:Back.easeOut,delay:.3},"a")
+      .to(".test #myText", 2, {text:{value:"春眠不觉晓",newClass:"class2", oldClass:"class1"}, ease:Linear.easeNone})
   ], {
-      triggerElement: ".sec3",
+      triggerElement: ".test",
       triggerHook: 0,
-      duration: winHeight
-    }).on("progress", function(e) {
-        if (e.progress <= .25) {
-        a()
-      }
-    }
-  )
-
-
-  },
-  setSec3Mb: function () {
-    var elem = document.querySelector(".sec3");
-
-    if (!elem) {
-      return
-    }
-    var winHeight = $('.sec3').height();
-     function a() {
-      $('.active video')[0].play();
-    }
-
-    this.setScene([(new TimelineMax)
-
-  ], {
-      triggerElement: ".sec3",
-      triggerHook: 0,
-      duration: winHeight
-    }).on("progress", function(e) {
-        if (e.progress > .25) {
-        a()
-      }
-    }
-  )
-  },
-  setSec4: function () {
-    if (utls.isPc) {
-      this.setSec4Pc();
-    } else {
-      this.setSec4Mb();
-    }
-  },
-  setSec4Pc: function () {
-    var elem = document.querySelector(".sec4");
-
-    if (!elem) {
-      return
-    }
-    var winHeight = $('.sec4').height();
-
-    this.setScene([(new TimelineMax)
-      .to(".sec4 .group",2,{opacity:0},"a")
-      .to('.sec4 .phone',2,{top:0,bottom:0},"a")
-      .to('.sec4 .ptext',2,{top:0,bottom:0},"a")
-      .to('.sec4 .ptext',2,{opacity:0},"b")
-      .to('.sec4 .phone',2,{scale:"1.5%"},"c")
-      .to('.sec4',2,{background:"#D8D8F7"},"b")
-      .to('.sec4 .phone',0,{backgroundImage:"url('https://infinixmob.mez100.com.cn/fileadmin/assets/v/smart/smart6plus/images/pc/sec4/nphone.png')"},"b")
-  ], {
-      triggerElement: ".sec4",
-      triggerHook: 0,
-      duration: winHeight*3
-    }).setPin(".sec4")
-
-
-  },
-  setSec4Mb: function () {
-    var elem = document.querySelector(".sec4");
-
-    if (!elem) {
-      return
-    }
-    var winHeight = $('.sec3').height();
-
-    this.setScene([(new TimelineMax)
-      .to(".sec4 .group",1,{opacity:0},"a")
-      .to('.sec4 .phone',1,{top:0,bottom:"1.5rem"},"a")
-      .to('.sec4 .ptext',1,{top:0,bottom:"1.5rem"},"a")
-      .to('.sec4 .ptext',1,{opacity:0},"b")
-      .to('.sec4 .phone',2,{scale:"1.4%",top:"-.25rem"},"c")
-      .to('.sec4',2,{background:"#D8D8F7"},"b")
-      // .to('.sec4 .f1',2,{top:"-2.75rem"},"b")
-      // .to('.sec4 .f2',2,{top:"2.75rem"},"b")
-      .to('.sec4 .phone',0,{backgroundImage:"url('https://infinixmob.mez100.com.cn/fileadmin/assets/v/smart/smart6plus/images/mob/sec4/nphone.png')"},"b")
-
-
-  ], {
-      triggerElement: ".sec4",
-      triggerHook: 0,
-      duration: winHeight*3
-    }).setPin(".sec4")
-
-
-  },
-
-  setSec6: function () {
-    if (utls.isPc) {
-      this.setSec6Pc();
-    } else {
-      // this.setSec6Mb();
-    }
-  },
-  setSec6Pc: function () {
-    var elem = document.querySelector(".sec6");
-
-    if (!elem) {
-      return
-    }
-    var winHeight = $('.sec6').height();
-
-    this.setScene([(new TimelineMax)
-      .to(".sec6 .left",1,{backgroundPosition: "9rem,0",ease:Sine.easeInOut},"a")
-      .to(".sec6 .son",1,{y:"-600",ease:Sine.easeInOut},"a")
-      .from(".sec6 .ga",.5,{y:"100",opacity:0,ease:Sine.easeInOut },"b")
-      .from(".sec6 .gb",.5,{y:"100",opacity:0,ease:Sine.easeInOut ,delay:.1},"b")
-
-
-  ], {
-      triggerElement: ".sec6 .tirger",
-      triggerHook: 0,
+      // duration: winHeight
     })
 
-
   },
-  setSec6Mb: function () {
-    var elem = document.querySelector(".sec6");
+
+
+  setPart3: function() {
+    if (utls.isPc) {
+      this.setPart3Pc();
+    } else {
+      this.setPart3Mb();
+    }
+  },
+  setPart3Pc: function() {
+    var elem = document.querySelector(".sec3");
 
     if (!elem) {
       return
     }
-    var winHeight = $('.sec6').height();
+    var winHeight = $('.sec3').height();
 
     this.setScene([(new TimelineMax)
-
+      .to(".sec3 .video",1,{scale:1.5})
   ], {
-      triggerElement: ".sec6",
+      triggerElement: ".sec2 .list",
       triggerHook: 0,
-    }).setPin(".sec6")
-
+      duration: winHeight/2
+    })
 
   },
-
-  setSec8: function () {
+  setPart8: function() {
     if (utls.isPc) {
-      this.setSec8Pc();
+      this.setPart8Pc();
     } else {
-      this.setSec8Mb();
+      this.setPart8Mb();
     }
   },
-  setSec8Pc: function () {
+  setPart8Pc: function() {
     var elem = document.querySelector(".sec8");
 
     if (!elem) {
@@ -722,17 +586,24 @@ var overview = {
     var winHeight = $('.sec8').height();
 
     this.setScene([(new TimelineMax)
-    .to('.sec8 .add1',1,{width:"25%"},"a")
-    .to('.sec8 .add2',1,{width:"30%"},"a")
-    .to('.sec8 .add3',1,{width:"100%"},"a")
-  ], {
-      triggerElement: ".sec8 .tirger",
-      triggerHook: 0,
-    })
+      .to(".sec8 .left",5,{opacity:0, x: -40},"a")
+      .to(".sec8 .right",5,{opacity:0, x: 40},"a")
+      .from(".sec8 .mask",5,{opacity:0})
+      .from(".sec8 .f1",5,{x:20,opacity:0})
+      .from(".sec8 .f2",5,{x:20,opacity:0})
+      .from(".sec8 .f3",5,{x:20,opacity:0})
+      .from(".sec8 .f4",5,{x:20,opacity:0})
+      .from(".sec8 .tip",5,{opacity:0, y: 20})
+      .to(".sec8 ",1,{marginTop:0})
 
+  ], {
+      triggerElement: ".sec8",
+      triggerHook: 0,
+      duration: winHeight*2
+    }).setPin('.sec8')
 
   },
-  setSec8Mb: function () {
+  setPart8Mb: function() {
     var elem = document.querySelector(".sec8");
 
     if (!elem) {
@@ -740,101 +611,398 @@ var overview = {
     }
     var winHeight = $('.sec8').height();
 
-
     this.setScene([(new TimelineMax)
-    .to('.sec8 .add1',.5,{width:"25%"},"a")
-    .to('.sec8 .add2',.5,{width:"30%"},"a")
-    .to('.sec8 .add3',.5,{width:"100%"},"a")
+      .to(".sec8 .left",5,{opacity:0, x: -40},"a")
+      .to(".sec8 .right",5,{opacity:0, x: 40},"a")
+      .from(".sec8 .mask",5,{opacity:0})
+      .from(".sec8 .f1",5,{x:20,opacity:0})
+      .from(".sec8 .f2",5,{x:20,opacity:0})
+      .from(".sec8 .f3",5,{x:20,opacity:0})
+      .from(".sec8 .f4",5,{x:20,opacity:0})
+      // .from(".sec8 .tip",5,{opacity:0, y: 20})
+      // .to(".sec8 ",1,{marginTop:0})
 
   ], {
-      triggerElement: ".sec8 .tirger",
+      triggerElement: ".sec8",
       triggerHook: 0,
-    })
-
+      duration: winHeight
+    }).setPin('.sec8')
 
   },
-  setSec13: function () {
+
+  setPart10: function() {
     if (utls.isPc) {
-      this.setSec13Pc();
+      this.setPart10Pc();
     } else {
-      this.setSec13Mb();
+      // this.setPart10Mb();
     }
   },
-  setSec13Pc: function () {
-    var elem = document.querySelector(".sec13");
-    if (!elem) {
-      return
-    }
-    !function changeImg(){
-      for(let i = 0; i < $('.sec13 .btn_box .com').length;i++){
-        $('.sec13 .btn_box .com').eq(i).click(function(){
-          // 改变选择状态
-          $('.sec13 .btn_box .com').css('background-size',0)
-          $('.sec13 .btn_box .com').eq(i).css('background-size',"contain")
-          // 改变图片
-          $('.sec13').css('background-image',`url(${imagePath}pc/sec13/f${i+1}${i+1}.png)`)
-        })
-      }
-    }()
-
-    var winHeight = $('.sec13').height();
-
-    this.setScene([(new TimelineMax)
-
-  ], {
-      triggerElement: ".sec13",
-      triggerHook: 0,
-    })
-  },
-  setSec13Mb: function () {
-    var elem = document.querySelector(".sec13");
+  setPart10Pc: function() {
+    var elem = document.querySelector(".sec10");
 
     if (!elem) {
       return
     }
-    !function changeImg(){
-      for(let i = 0; i < $('.sec13 .top .cen').length;i++){
-        $('.sec13 .top .cen').eq(i).click(function(){
-          // 改变选择状态
-
-          $('.sec13 .bottom .com').css('opacity',0)
-          $('.sec13 .bottom .com').eq(i).css('opacity',1)
-
-          $('.sec13 .btn-box .same').css('background-size',0)
-          $('.sec13 .btn-box .same').eq(i).css('background-size',".175rem .175rem")
-          // $('.sec13 .btn_box .cen').eq(i).css('background-size',".125rem .125rem")
-          // $('.sec13 .btn_box .com').css('background-size',0)
-          // $('.sec13 .btn_box .com').eq(i).css('background-size',"contain")
-          // 改变图片
-          $('.sec13 .phone').css('background-image',`url(${imagePath}mob/sec13/f${i+1}${i+1}.png)`)
-        })
-      }
-    }()
-
-
-    var winHeight = $('.sec13').height();
+    var winHeight = $('.sec10').height();
 
     this.setScene([(new TimelineMax)
-
+      .to(".sec10 .bigimg",1,{marginTop:0},"a")
+      .to(".sec10 .bigimg",2,{scale:.53,opacity:1,y:104},"b")
+      .to(".sec10 .sphone",2,{scale:.7,y:122},"b")
+      .to(".sec10 .wave1",2,{scale:.7,y:122},"b")
+      .to(".sec10 .wave2",2,{scale:.7,y:122},"b")
+      .to(".sec10 .wave3",2,{scale:.7,y:122},"b")
+      .from(".sec10 p",2,{opacity:0,y:40},"c")
+      .from(".sec10 .description",2,{opacity:0,y:40},"c")
   ], {
-      triggerElement: ".sec13",
+      triggerElement: ".sec10",
       triggerHook: 0,
-    })
-
+      duration: winHeight
+    }).setPin('.sec10').on("progress", function(e) {
+      if (e.progress <= .25) {
+       $('.sec10 .bigimg').removeClass('bigimgadd')
+     }
+     if(e.progress >= .53) {
+      $('.sec10 .wave1').addClass('start1')
+      $('.sec10 .wave2').addClass('start2')
+      $('.sec10 .wave3').addClass('start3')
+     }
+     else if(e.progress <= .53) {
+      $('.sec10 .wave1').removeClass('start1')
+      $('.sec10 .wave2').removeClass('start2')
+      $('.sec10 .wave3').removeClass('start3')
+     }
+     else if (e.progress > .25) {
+       $('.sec10 .bigimg').addClass('bigimgadd')
+     }
+   })
 
   },
+
+  setPartpart1: function() {
+    if (utls.isPc) {
+      this.setPartpart1Pc();
+    } else {
+      console.log('mb');
+      this.setPartpart1Mb();
+    }
+  },
+  setPartpart1Pc: function() {
+    var elem = document.querySelector(".part1");
+
+    if (!elem) {
+      return
+    }
+    var winHeight = $('.part1').height();
+
+    this.setScene([(new TimelineMax)
+      .to(".sec11", 2,{marginTop:0})
+      .from(".sec11 p", 5,{y:40,opacity:0},"a")
+      .to(".sec11 p", 5,{opacity:0},"b")
+      .from(".sec11 .description", 5,{y:40,opacity:0},"a")
+      .to(".sec11 .description", 5,{opacity:0},"b")
+      .from(".sec12 p", 5,{y:40,opacity:0},"c")
+      .from(".sec12 .description", 5,{y:40,opacity:0},"c")
+      .from(".sec12 .tip", 5,{y:40,opacity:0},"c")
+  ], {
+      triggerElement: ".part1",
+      triggerHook: 0,
+      duration: winHeight*3
+    }).setPin('.part1').on("progress", function(e) {
+       if (e.progress <= .65) {
+        $('.sec11').removeClass('sec11add')
+        $('.sec12').removeClass('sec12add')
+      } else if (e.progress > .65 && e.progress <= .75) {
+        $('.sec11').addClass('sec11add')
+        $('.sec12').addClass('sec12add')
+      }
+    })
+
+  },
+  setPartpart1Mb: function() {
+    var elem = document.querySelector(".part1");
+
+    if (!elem) {
+      return
+    }
+    var winHeight = $('.part1').height();
+
+    this.setScene([(new TimelineMax)
+      .to(".sec11", 2,{marginTop:0})
+      .from(".sec11 p", 5,{y:40,opacity:0},"a")
+      .to(".sec11 p", 5,{opacity:0},"b")
+      .from(".sec11 .description", 5,{y:40,opacity:0},"a")
+      .to(".sec11 .description", 5,{opacity:0},"b")
+      .from(".sec12 p", 5,{y:40,opacity:0},"c")
+      .from(".sec12 .description", 5,{y:40,opacity:0},"c")
+      .from(".sec12 .tip", 5,{y:40,opacity:0},"c")
+  ], {
+      triggerElement: ".part1",
+      triggerHook: 0,
+      duration: winHeight*3
+    }).setPin('.part1').on("progress", function(e) {
+       if (e.progress <= .65) {
+        $('.sec11').removeClass('sec11addmob')
+        $('.sec12').removeClass('sec12addmob')
+      } else if (e.progress > .65 && e.progress <= .75) {
+        $('.sec11').addClass('sec11addmob')
+        $('.sec12').addClass('sec12addmob')
+      }
+    })
+
+  },
+  setSec14: function () {
+    if (utls.isPc) {
+      this.setSec14Pc();
+    } else {
+      this.setSec14Mb();
+    }
+  },
+
+  setSec14Pc: function () {
+    var elem = document.querySelector(".sec14");
+
+    if (!elem) {
+      return
+    }
+
+    // !function changeImg(){
+    //   for(let i = 0; i < $('.sec14 .btn div').length;i++){
+    //     $('.sec14 .btn div').eq(i).click(function(){
+    //       $('.sec14 .img').css('background-image',`url(${imagePath}pc/sec14/f${i+1}${i+1}.png)`)
+    //     })
+    //   }
+    // }()
+    function a(index){
+      for(let i = 0;i < 4;i++){
+       $('.sec14 .btn .bbox').eq(i).css('background-size','0')
+      }
+      if(index == 5){
+        index = 1
+      }
+      $('.sec14 .btn .bbox').eq(index-1).css('background-size','100% 100%')
+     }
+    new Swiper(".sec14 .swiper-container", {
+      effect: "fade",
+      fadeEffect: {
+        crossFade: true,
+      },
+      slidesPerView: "1",
+      lazy: true,
+      loop: true,
+      speed: 800,
+      autoplay : true,
+      autoplay: {
+        delay:2000
+      },
+      on:{
+        slideNextTransitionStart: function(swiper){
+          //Swiper初始化了
+          // console.log('当前的slide序号是'+this.activeIndex);//或者swiper.activeIndex，swiper与this都可指代当前swiper实例
+          // this.emit('transitionEnd');//在初始化时触发一次transitionEnd事件，需要先设置transitionEnd
+          a(this.activeIndex)
+        },
+      },
+      pagination: {
+        el: ".sec14 .pagination",
+        // clickable: true,
+      },
+    });
+  },
+  setSec14Mb: function () {
+    var elem = document.querySelector(".sec14");
+
+    if (!elem) {
+      return
+    }
+
+    // !function changeImg(){
+    //   for(let i = 0; i < $('.sec14 .btn div').length;i++){
+    //     $('.sec14 .btn div').eq(i).click(function(){
+    //       $('.sec14 .img').css('background-image',`url(${imagePath}pc/sec14/f${i+1}${i+1}.png)`)
+    //     })
+
+    //   }
+    // }()
+    function a(index){
+      for(let i = 0;i < 4;i++){
+       $('.sec14 .btn .bbox').eq(i).css('background-size','0')
+      }
+      if(index == 5){
+        index = 1
+      }
+      $('.sec14 .btn .bbox').eq(index-1).css('background-size','100% 100%')
+     }
+    new Swiper(".sec14 .swiper-container", {
+      effect: "fade",
+      fadeEffect: {
+        crossFade: true,
+      },
+      slidesPerView: "1",
+      lazy: true,
+      loop: true,
+      speed: 800,
+      autoplay : true,
+      autoplay: {
+        delay:2000
+      },
+      on:{
+        slideNextTransitionStart: function(swiper){
+          //Swiper初始化了
+          // console.log('当前的slide序号是'+this.activeIndex);//或者swiper.activeIndex，swiper与this都可指代当前swiper实例
+          // this.emit('transitionEnd');//在初始化时触发一次transitionEnd事件，需要先设置transitionEnd
+          a(this.activeIndex)
+        },
+      },
+      pagination: {
+        el: ".sec14 .pagination",
+        // clickable: true,
+      },
+    });
+  },
+
+  setPart15: function() {
+    if (utls.isPc) {
+      this.setPart15Pc();
+    } else {
+      // this.setPart15Mb();
+    }
+  },
+  setPart15Pc: function() {
+    var elem = document.querySelector(".sec15");
+
+    if (!elem) {
+      return
+    }
+    var winHeight = $('.sec15').height();
+
+    this.setScene([(new TimelineMax)
+      .to(".sec15 .text",2,{y:-40,opacity:0},"a")
+      .to(".sec15 .img",4,{scale:2.5},"b")
+      .to(".sec15 .description",1,{opacity:0},"b")
+  ], {
+      triggerElement: ".sec15",
+      triggerHook: 0,
+      duration: winHeight*5
+    }).setPin('.sec15')
+  },
+  setPart15Mb: function() {
+    var elem = document.querySelector(".sec15");
+
+    if (!elem) {
+      return
+    }
+    var winHeight = $('.sec15').height();
+
+    this.setScene([(new TimelineMax)
+      .to(".sec15 .text",2,{y:-40,opacity:0},"a")
+      .to(".sec15 .img",4,{scale:4},"b")
+      .to(".sec15 .img",4,{y:200},"b")
+      .to(".sec15 .description",1,{opacity:0},"b")
+  ], {
+      triggerElement: ".sec15",
+      triggerHook: 0,
+      duration: winHeight*5
+    }).setPin('.sec15')
+  },
+
+  setPart17: function() {
+    if (utls.isPc) {
+      this.setPart17Pc();
+    } else {
+      // this.setPart17Mb();
+    }
+  },
+  setPart17Pc: function() {
+    var elem = document.querySelector(".sec17");
+
+    if (!elem) {
+      return
+    }
+    var winHeight = $('.sec17').height();
+
+    this.setScene([(new TimelineMax)
+      .to(".sec17 .imgs", 1,{x:-220},"a")
+
+  ], {
+      triggerElement: ".sec17 .triger",
+      triggerHook: 0,
+      // duration: winHeight
+    })
+
+  },
+  setPart18: function() {
+    if (utls.isPc) {
+      this.setPart18Pc();
+    } else {
+      this.setPart18Mb();
+    }
+  },
+  setPart18Pc: function() {
+    var elem = document.querySelector(".part2");
+
+    if (!elem) {
+      return
+    }
+    var winHeight = $('.sec18').height();
+
+    this.setScene([(new TimelineMax)
+      .to('.sec18 .logo',3,{opacity:0,y:-100})
+      .from('.sec19',3,{opacity:0})
+      .from('.sec19 .one',3,{opacity:0,y:40})
+      .to('.sec19 .one',3,{opacity:0})
+      .from('.sec19 .two',3,{opacity:0,y:40})
+      .to('.sec19 .two',3,{opacity:0})
+      .from('.sec19 .three',3,{opacity:0,y:40})
+  ], {
+      triggerElement: ".part2",
+      triggerHook: 0,
+      duration: winHeight * 4
+    }).setPin('.part2')
+
+  },
+  setPart18Mb: function() {
+    var elem = document.querySelector(".part2");
+
+    if (!elem) {
+      return
+    }
+    var winHeight = $('.sec18').height();
+
+    this.setScene([(new TimelineMax)
+      .to('.sec18 .logo',3,{opacity:0,y:-100})
+      .from('.sec19',3,{opacity:0})
+      .from('.sec19 .one',3,{opacity:0,y:40})
+      .to('.sec19 .one',3,{opacity:0})
+      .from('.sec19 .two',3,{opacity:0,y:40})
+      .to('.sec19 .two',3,{opacity:0})
+      .from('.sec19 .three',3,{opacity:0,y:40})
+  ], {
+      triggerElement: ".part2",
+      triggerHook: 0,
+      duration: winHeight * 4
+    }).setPin('.part2')
+
+  },
+
+
+
+
 
   init: function () {
     this.winWidth = window.innerWidth;
     this.controller = new ScrollMagic.Controller();
     // this.pageInit();
     // this.setPart9()
-    this.setSec3()
-    this.setSec4()
-    this.setSec6()
-    this.setSec8()
-    this.setSec13()
-    // this.setSec15()
+    this.setPart1();
+    this.setPart8();
+    this.setPart10();
+    this.setPartpart1();
+
+    this.setSec14();
+    this.setPart15();
+    this.setPart17();
+    this.setPart18();
 
     this.elLazy = this.lazy();
     this.scroll();

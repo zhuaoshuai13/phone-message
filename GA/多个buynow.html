@@ -1,0 +1,65 @@
+<script>
+  $(function () {
+    function gtag(opt) {
+      dataLayer && dataLayer.push(opt);
+    }
+
+    $('.im-localnav .ac-ln-action').click(function (e) {
+      e.preventDefault();
+      var url = $(this).attr('href');
+      var name = $(this).text();
+
+      gtag({
+        eventAction: 'Click',
+        eventLabel: 'NOTE 12 VIP: BUY NOW',
+        eventCategory: 'BUY NOW',
+        event: 'triggerUrl',
+        eventCallback: function () {
+          $(function () {
+            function gtag(opt) {
+              dataLayer && dataLayer.push(opt);
+            }
+
+            $('.im-localnav .ac-ln-action').click(function (e) {
+              gtag({
+                eventAction: 'Click',
+                eventLabel: 'NOTE 12 VIP: BUY NOW',
+                eventCategory: 'BUY NOW',
+                event: 'triggerUrl',
+              });
+            });
+            $('.store-lists a').click(function (e) {
+              e.preventDefault();
+              var url = $(this).attr('href');
+              var name = $(this).text();
+
+              gtag({
+                eventAction: 'Click',
+                eventLabel: 'NOTE 12 VIP: ' + name,
+                eventCategory: 'BUY NOW',
+                event: 'triggerUrl',
+                eventCallback: function () {
+                  window.location.href = url;
+                },
+              });
+            });
+            $('.store-list2 a').click(function (e) {
+              e.preventDefault();
+              var url = $(this).attr('href');
+
+              gtag({
+                eventAction: 'Click',
+                eventLabel: 'NOTE 12 VIP: FIND A STORE ',
+                eventCategory: 'BUY NOW',
+                event: 'triggerUrl',
+                eventCallback: function () {
+                  window.location.href = url;
+                },
+              });
+            });
+          });
+        },
+      });
+    });
+  });
+</script>
