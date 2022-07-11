@@ -1,4 +1,7 @@
 {
     "editor.formatOnSave": true,
-    "emmet.triggerExpansionOnTab": true
+    "emmet.triggerExpansionOnTab": true,
+    "typescript.validate.enable": false,
+    "javascript.validate.enable": false,
+    "auto-close-tag.SublimeText3Mode": true
 }

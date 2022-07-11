@@ -7,8 +7,8 @@ var videoPath = "/assets/images/hot11-play/video/";
 
 
 
-var videoPath = "/fileadmin/assets/v/hot/hot12/images/";
-var imagePath = "/fileadmin/assets/v/hot/hot12/images/";
+var videoPath = "https://infinixmob.mez100.com.cn/fileadmin/assets/v/hot/hot12pro/images/";
+var imagePath = "https://infinixmob.mez100.com.cn/fileadmin/assets/v/hot/hot12pro/images/";
 // var videoPath = "/assets/images/hot12/";
 
 
@@ -908,7 +908,7 @@ var overview = {
 
   setPart17: function() {
     if (utls.isPc) {
-      this.setPart17Pc();
+      // this.setPart17Pc();
     } else {
       // this.setPart17Mb();
     }
