@@ -1,1 +1,637 @@
-<div class="d">cnassssssssskcnsk</div>
+<style>
+  .bts {
+    width: 19.2rem;
+  }
+
+  .bts .mob {
+    display: none;
+  }
+
+  .bts .item {
+    width: 11.2rem;
+    margin: 0 auto;
+  }
+
+  .bts .mob {
+    display: none;
+  }
+
+  .bts .sec1 {
+    background-image: url('/fileadmin/assets/images/activity/rubts/pc/kv.png');
+    height: 7rem;
+    background-size: contain;
+  }
+
+  .bts .secContent {
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    border-top: 0.07rem solid;
+  }
+
+  .bts .secContent .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 11.2rem;
+    height: 100rem;
+    background-image: url('/fileadmin/assets/images/activity/rubts/pc/line2.png');
+    background-size: contain;
+    margin: auto;
+  }
+
+  .bts .big {
+    text-align: center;
+    font-size: 0.8rem;
+    font-family: 'DINProBlack';
+    color: #f86a00;
+  }
+
+  .bts .text {
+    margin: 50px auto;
+  }
+
+  .bts .small {
+    text-align: center;
+    font-size: 0.28rem;
+    font-family: 'DINProRegular';
+  }
+
+  .bts .colorBg {
+    background-image: url('/fileadmin/assets/images/activity/rubts/pc/colorbg.png');
+    background-size: contain;
+    background-repeat-y: no-repeat;
+  }
+
+  .bts .com {
+    padding: 0.55rem 0 0.75rem;
+  }
+
+  .bts .box {
+    width: 11.2rem;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    position: relative;
+    z-index: 3;
+    justify-content: space-evenly;
+  }
+
+  .bts .box .desc {
+    font-size: 0.18rem;
+    font-family: 'DINProRegular';
+  }
+
+  .bts .box img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .bts .box .product {
+    height: 3.13rem;
+  }
+
+  .bts .box .product_t {
+    margin: 0.3rem auto 0.2rem;
+    height: 0.38rem;
+  }
+
+  .bts .box .desc span {
+    font-family: 'DINProBold';
+  }
+
+  .bts .box .price {
+    font-size: 0.4rem;
+    font-family: 'DINProBold';
+    color: #f86a00;
+    margin: 0.2rem 0 0.3rem;
+  }
+
+  .bts .box .price span {
+    font-size: 0.2rem;
+    color: #a5a5a5;
+    font-family: 'DINProRegular';
+    text-decoration: line-through;
+  }
+
+  .bts .btn {
+    width: 2.64rem;
+    height: 0.52rem;
+    background: #009876;
+    margin: 0 auto;
+    line-height: 0.52rem;
+    font-size: 0.22rem;
+    font-family: 'DINProBold';
+  }
+
+  .bts .btn a {
+    display: inline-block;
+    color: #fff;
+    width: 100%;
+  }
+
+  .bts .inbook {
+    padding: 0.55rem 0 0.75rem;
+  }
+
+  .bts .inbook .box .price {
+    margin: 0.2rem auto 0.2rem;
+  }
+
+  .bts .inbook .box .desc {
+    margin-top: 0.2rem;
+  }
+
+  .bts .inbook .left img {
+    height: 3.77rem;
+  }
+
+  .bts .inbook .right img {
+    height: 0.38rem;
+  }
+
+  .bts .end {
+    background-image: url('/fileadmin/assets/images/activity/rubts/pc/colorEnd.png');
+    background-size: contain;
+    background-repeat-y: no-repeat;
+    padding: 1rem 0 1rem;
+  }
+
+  .bts .endBox {
+    width: 9.8rem;
+    margin: 0 auto;
+    position: relative;
+    z-index: 3;
+  }
+
+  .bts .end .endText {
+    text-align: center;
+    font-size: 0.8rem;
+    font-family: 'DINProBlack';
+    color: #000;
+  }
+
+  .bts .end a {
+    margin-top: 0.3rem;
+  }
+
+  .bts .end .iconBox {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.2rem;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .bts {
+      width: 3.6rem;
+    }
+
+    .bts .pc {
+      display: none;
+    }
+
+    .bts .item {
+      width: 3.25rem;
+      margin: 0 auto;
+      padding: 0.27rem 0 0.23rem;
+    }
+
+    .bts .sec1 {
+      background-image: url('/fileadmin/assets/images/activity/rubts/mob/kv.png');
+      height: 6.37rem;
+      background-size: contain;
+    }
+
+    .bts .mob {
+      display: inline-block;
+    }
+
+    .bts .big {
+      font-size: 0.24rem;
+    }
+
+    .bts .small {
+      font-size: 0.12rem;
+    }
+
+    .bts .box {
+      width: 3.25rem;
+    }
+    .bts .box .product {
+      height: 1.05rem;
+    }
+
+    .bts .box .product_t {
+      height: 0.17rem;
+    }
+
+    .bts .box .desc {
+      font-size: 0.06rem;
+    }
+
+    .bts .box .price {
+      font-size: 0.2rem;
+    }
+
+    .bts .box .price span {
+      font-size: 0.1rem;
+    }
+    .bts .btn {
+      width: 0.84rem;
+      height: 0.31rem;
+      line-height: 0.31rem;
+      font-size: 0.11rem;
+    }
+
+    .bts .box .product_t {
+      margin: 0.2rem auto 0.15rem;
+    }
+
+    .bts .box .price {
+      margin: 0.07rem auto 0.07rem;
+    }
+    .bts .colorBg {
+      background-image: unset;
+      border-top: 0.03rem solid;
+      border-bottom: 0.03rem solid;
+      background-color: #f2ebe1;
+    }
+
+    .bts .com {
+      padding: 0.5rem 0 0.6rem;
+    }
+
+    .bts .inbook .left img {
+      height: 1.2rem;
+    }
+
+    .bts .inbook .right img {
+      height: 0.17rem;
+    }
+    .bts .inbook .box .price {
+      margin: 0.04rem auto 0.04rem;
+    }
+    .bts .inbook .box .desc {
+      margin-top: 0.1rem;
+    }
+    .bts .end .endText {
+      font-size: 0.24rem;
+    }
+
+    .bts .end {
+      background-image: unset;
+      border-top: 0.03rem solid;
+      background-color: #f2ebe1;
+      padding: 0.5rem 0;
+    }
+
+    .bts .endBox {
+      width: 3.15rem;
+    }
+    .bts .end .iconBox {
+      justify-content: space-around;
+    }
+    .bts .secContent .bg {
+      width: 3.25rem;
+      background-image: unset;
+      border-left: 0.03rem solid;
+      border-right: 0.03rem solid;
+    }
+    .bts .secContent {
+      border-top: 0.03rem solid;
+    }
+  }
+</style>
+<div class="bts">
+  <div class="sec1"></div>
+  <div class="secContent">
+    <div class="bg"></div>
+    <div class="text item">
+      <div class="big">Скидки до 13 000 рублей!</div>
+      <div class="small">Отличные предложения для учебы и не только.</div>
+    </div>
+    <div class="com colorBg">
+      <div class="box">
+        <div class="left">
+          <img class="product" src="/fileadmin/assets/images/activity/rubts/pc/hot12.png" alt="" />
+          <img
+            class="product_t"
+            src="/fileadmin/assets/images/activity/rubts/pc/hot12_t.png"
+            alt=""
+          />
+          <div class="desc">
+            <span>6.82"</span> Яркий дисплей 90 Гц <br />
+            <span>Батарея 6000 мАч</span> + Power Marathon <br />
+            Расширение оперативной памяти<span>до 7 Гб </span>
+          </div>
+          <div class="price">9 990 <span>12 990</span></div>
+          <div class="btn">
+            <a
+              href="https://msk.rbt.ru/cat/cifrovye_ustroistva/smartfony/infinix_hot_12_play_4_64gb_black/"
+              >КУПИТЬ</a
+            >
+          </div>
+        </div>
+        <div class="right">
+          <img class="product" src="/fileadmin/assets/images/activity/rubts/pc/note12.png" alt="" />
+          <img
+            class="product_t"
+            src="/fileadmin/assets/images/activity/rubts/pc/note12_t.png"
+            alt=""
+          />
+          <div class="desc">
+            <span>Мощная зарядка 120 Вт</span> со 103 механизмами защиты <br />
+            <span>Яркий AMOLED </span>с частотой обновления 120 Гц <br />
+            <span>Тройная 108 Мп </span>камера
+          </div>
+          <div class="price">26 990 <span>32 990</span></div>
+          <div class="btn">
+            <a
+              href="https://moskva.beeline.ru/shop/details/smartfon-infinix-note-12-vip-256gb-force-black/"
+              >КУПИТЬ</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="com">
+      <div class="box">
+        <div class="left">
+          <img class="product" src="/fileadmin/assets/images/activity/rubts/pc/hot12i.png" alt="" />
+          <img
+            class="product_t"
+            src="/fileadmin/assets/images/activity/rubts/pc/hot12i_t.png"
+            alt=""
+          />
+          <div class="desc">
+            <span>64 ГБ Большой объем памяти с </span> функцией очистки файлов <br />
+            <span>До 7 ГБ </span> расширенной оперативной памяти<br />
+            <span>Яркий IPS</span> дисплей
+          </div>
+          <div class="price">9 490 <span>11 990</span></div>
+          <div class="btn">
+            <a
+              href="https://msk.rbt.ru/cat/cifrovye_ustroistva/smartfony/infinix_hot_12i_4_64gb_black/"
+              >КУПИТЬ</a
+            >
+          </div>
+        </div>
+        <div class="right">
+          <img class="product" src="/fileadmin/assets/images/activity/rubts/pc/smart6.png" alt="" />
+          <img
+            class="product_t"
+            src="/fileadmin/assets/images/activity/rubts/pc/smart6_t.png"
+            alt=""
+          />
+          <div class="desc">
+            <span>6.6” HD+ </span> яркий дисплей с каплевидным вырезом <br />
+            <span>Аккумулятор 5000 мАч </span>+ Power Marathon<br />
+            <span>Разблокировка по лицу </span>и отпечатку пальца
+          </div>
+          <div class="price">7 490 <span>9 990</span></div>
+          <div class="btn">
+            <a
+              href="https://www.citilink.ru/product/smartfon-infinix-smart-6-x6512-32gb-2gb-goluboi-3g-4g-2sim-6-6-ips-720-1768893/ "
+              >КУПИТЬ</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="com colorBg">
+      <div class="box">
+        <div class="left">
+          <img class="product" src="/fileadmin/assets/images/activity/rubts/pc/hot11.png" alt="" />
+          <img
+            class="product_t"
+            src="/fileadmin/assets/images/activity/rubts/pc/hot11_t.png"
+            alt=""
+          />
+          <div class="desc">
+            <span>90Гц 6,78" FHD+ IPS </span> дисплей <br />
+            <span>50 Мп камера </span> с режимом ночной съёмки<br />
+            Впечатляющая производительность <span> Helio G88</span>
+          </div>
+          <div class="price">11 990 <span>14 990</span></div>
+          <div class="btn">
+            <a
+              href="https://www.citilink.ru/product/smartfon-infinix-hot-11s-x6812b-64gb-4gb-chernyi-3g-4g-2sim-6-78-tft-1-1649491/ "
+              >КУПИТЬ</a
+            >
+          </div>
+        </div>
+        <div class="right">
+          <img class="product" src="/fileadmin/assets/images/activity/rubts/pc/note10.png" alt="" />
+          <img
+            class="product_t"
+            src="/fileadmin/assets/images/activity/rubts/pc/note10_t.png"
+            alt=""
+          />
+          <div class="desc">
+            <span>Helio G95 </span> превосходный игровой процессор <br />
+            <span>6,95” FHD+, 90Гц </span>Super Fluid дисплей <br />
+            <span>64 Мп </span>ультра ночная камера
+          </div>
+          <div class="price">16 990 <span>26 990</span></div>
+          <div class="btn">
+            <a
+              href="https://www.dns-shop.ru/product/ce5c0f46b95eed20/695-smartfon-infinix-note-10-pro-128-gb-cernyj/"
+              >КУПИТЬ</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="inbook">
+      <div class="box">
+        <div class="left">
+          <img src="/fileadmin/assets/images/activity/rubts/pc/inbook.png" alt="" />
+        </div>
+        <div class="right">
+          <img src="/fileadmin/assets/images/activity/rubts/pc/inbook_t.png" alt="" />
+          <div class="desc">
+            <span>1.24кг 14.8мм </span> Тонкий металлический корпус <br />
+            <span>14” Яркий дисплей </span>100% sRGB <br />
+
+            <span>Intel Core</span> i3 | <span>SSD</span> 256/512 GB
+          </div>
+          <div class="price">29 990 <span>42 990</span></div>
+          <div class="btn">
+            <a
+              href="https://www.dns-shop.ru/product/57b7fc12d817ed20/14-noutbuk-infinix-inbook-x2-sinij/"
+              >КУПИТЬ</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="end">
+      <div class="endBox">
+        <div class="endText">МАГАЗИНЫ-ПАРТНЕРЫ</div>
+        <div class="iconBox">
+          <a href="https://www.ozon.ru/brand/infinix-100093894/">
+            <img
+              src="/fileadmin/assets/images/activity/rubts/pc/ozon.png"
+              alt=""
+              style="height: 0.32rem"
+              class="pc"
+            />
+            <img
+              src="/fileadmin/assets/images/activity/rubts/pc/ozon.png"
+              alt=""
+              style="height: 0.16rem"
+              class="mob"
+            />
+          </a>
+          <a href="https://www.dns-shop.ru/search/?q=infinx">
+            <img
+              src="/fileadmin/assets/images/activity/rubts/pc/dnsnew.png"
+              alt=""
+              style="height: 0.64rem"
+              class="pc"
+            />
+            <img
+              src="/fileadmin/assets/images/activity/rubts/pc/dnsnew.png"
+              alt=""
+              style="height: 0.32rem"
+              class="mob"
+            />
+          </a>
+          <a href="https://www.citilink.ru/catalog/smartfony/INFINIX/?text=infinix">
+            <img
+              src="/fileadmin/assets/images/activity/rubts/pc/cnt.png"
+              alt=""
+              style="height: 0.44rem"
+              class="pc"
+            />
+            <img
+              src="/fileadmin/assets/images/activity/rubts/pc/cnt.png"
+              alt=""
+              style="height: 0.22rem"
+              class="mob"
+            />
+          </a>
+          <a href="https://msk.rbt.ru/cat/cifrovye_ustroistva/smartfony/infinix/">
+            <img
+              src="/fileadmin/assets/images/activity/rubts/pc/rbtnew.png"
+              alt=""
+              style="height: 0.69rem"
+              class="pc"
+            />
+            <img
+              src="/fileadmin/assets/images/activity/rubts/pc/rbtnew.png"
+              alt=""
+              style="height: 0.34rem"
+              class="mob"
+            />
+          </a>
+          <!--/* <a href="">
+            <img
+              src="/fileadmin/assets/images/activity/rubts/pc/mvideo.png"
+              alt=""
+              style="height: 0.37rem"
+              class="pc"
+            />
+            <img
+              src="/fileadmin/assets/images/activity/rubts/pc/mvideo.png"
+              alt=""
+              style="height: 0.18rem"
+              class="mob"
+            />
+          </a> */-->
+          <a href="https://moskva.beeline.ru/shop/catalog/telefony/smartfony/proizvoditel-infinix/">
+            <img
+              src="/fileadmin/assets/images/activity/rubts/pc/bee.png"
+              alt=""
+              style="height: 0.39rem"
+              class="pc"
+            />
+            <img
+              src="/fileadmin/assets/images/activity/rubts/pc/bee.png"
+              alt=""
+              style="height: 0.19rem"
+              class="mob"
+            />
+          </a>
+          <a href="http://www.wildberries.ru/">
+            <img
+              src="/fileadmin/assets/images/activity/rubts/pc/wildnew.png"
+              alt=""
+              style="height: 0.25rem"
+              class="pc"
+            />
+            <img
+              src="/fileadmin/assets/images/activity/rubts/pc/wildnew.png"
+              alt=""
+              style="height: 0.12rem"
+              class="mob"
+            />
+          </a>
+          <a
+            href="https://market.yandex.ru/search?text=infinix%20&cvredirect=2&cpa=0&onstock=0&local-offers-first=0"
+          >
+            <img
+              src="/fileadmin/assets/images/activity/rubts/pc/free.png"
+              alt=""
+              style="height: 0.41rem"
+              class="pc"
+            />
+            <img
+              src="/fileadmin/assets/images/activity/rubts/pc/free.png"
+              alt=""
+              style="height: 0.2rem"
+              class="mob"
+            />
+          </a>
+          <a href="https://www.svyaznoy.ru/catalog/phone/225/infinix">
+            <img
+              src="/fileadmin/assets/images/activity/rubts/pc/cb.png"
+              alt=""
+              style="height: 0.3rem"
+              class="pc"
+            />
+            <img
+              src="/fileadmin/assets/images/activity/rubts/pc/cb.png"
+              alt=""
+              style="height: 0.15rem"
+              class="mob"
+            />
+          </a>
+          <a href="https://msk.tele2.ru/shop/devices/smartphones?sortingType=pop&brand=2600002">
+            <img
+              src="/fileadmin/assets/images/activity/rubts/pc/tele.png"
+              alt=""
+              style="height: 0.37rem"
+              class="pc"
+            />
+            <img
+              src="/fileadmin/assets/images/activity/rubts/pc/tele.png"
+              alt=""
+              style="height: 0.18rem"
+              class="mob"
+            />
+          </a>
+          <a
+            href="https://shop.mts.ru/product/noutbuk-infinix-inbook-x2-t097801-14-4-256gb-goluboj"
+          >
+            <img
+              src="/fileadmin/assets/images/activity/rubts/pc/mtc.jpg"
+              alt=""
+              style="height: 0.37rem"
+              class="pc"
+            />
+            <img
+              src="/fileadmin/assets/images/activity/rubts/pc/mtc.jpg"
+              alt=""
+              style="height: 0.18rem"
+              class="mob"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
